@@ -10,7 +10,7 @@ export const NAV_ITEMS = [
 ];
 
 export const SOCIALS = [
-    { name: 'Email', link: 'https://github.com/ChocoCodes', icon: IoMail },
+    { name: 'Email', link: 'mailto:johnrlnd1704@gmail.com?subject=Portfolio%20Inquiry', icon: IoMail },
     { name: 'Github', link: 'https://github.com/ChocoCodes', icon: IoLogoGithub },
-    { name: 'LinkedIn', link: 'https://github.com/ChocoCodes', icon: FaLinkedinIn },
+    { name: 'LinkedIn', link: 'https://www.linkedin.com/in/johnrlnd', icon: FaLinkedinIn },
 ];

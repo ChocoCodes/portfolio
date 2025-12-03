@@ -1,13 +1,18 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { RxHamburgerMenu } from "react-icons/rx";
 import { motion } from 'motion/react';
 import { FaUserClock } from "react-icons/fa";
 import { usePathname } from 'next/navigation';
-import { navVariants, mobileVariants, linkVariants, containerVariants } from '@/utils/motion-variants';
 import { NAV_ITEMS } from '@/utils/contents';
+import { 
+    navVariants, 
+    mobileVariants, 
+    linkVariants, 
+    containerVariants 
+} from '@/utils/motion-variants';
 
 interface NavBarProps {
     navClass?: string;
@@ -41,10 +46,29 @@ const NavBar = ({ navClass = '', listClass, initial = false, animate = false }: 
 }
 
 const TimeDisplay = () => {
+    const [time, setTime] = useState("");
+    const MINUTE = 1000 * 60;
+
+    useEffect(() => {
+        const formatter = new Intl.DateTimeFormat("en-US", {
+            timeZone: "Asia/Manila",
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: true
+        });
+
+        const update = () => setTime(formatter.format(new Date()));
+        update();
+
+        const interval = setInterval(update, MINUTE);
+
+        return () => clearInterval(interval);
+    }, [])
+
     return (
-        <div className="flex gap-2 items-center justify-center">
+        <div className="flex gap-1 md:gap-2 items-center justify-center text-[8px] md:text-lg">
             <FaUserClock />
-            <p>time</p>
+            <p>{ time } (PHT)</p>
         </div>
     )
 }
@@ -56,19 +80,19 @@ export const Header = () => {
             className="flex flex-col md:flex-row w-full bg-background text-default font-sora p-8 md:px-14"
         >
             <motion.div 
-                className="flex w-full justify-between items-center" 
+                className="flex w-full md:w-3/5 justify-between items-center mx-auto" 
                 variants={containerVariants}
                 initial="closed"
                 animate="open"
             >
-                <p>placeholder</p>
+                <Link href="/" className='text-xs md:text-lg'>John Octavio.</Link>
                 <NavBar 
                     navClass='hidden md:flex' 
                     listClass='flex gap-8' 
                     initial="closed" 
                     animate="open"
                 />
-                <div className='flex items-center gap-6'>
+                <div className='flex items-center gap-2'>
                     <TimeDisplay />
                     <button className='block md:hidden' onClick={() => setIsMenuOpen(!isMenuOpen)}>
                         <RxHamburgerMenu />

@@ -10,7 +10,7 @@ interface CTAProps {
 
 export const CTA = ({ className, icon: Icon, text, link}: CTAProps) => {
     return (
-        <Link className={`flex gap-2 items-center justify-center rounded-xs ${ className }`} href={ link }>
+        <Link className={`flex gap-2 items-center justify-center rounded-xs text-xs py-1 px-2 md:text-lg md:px-4 md:rounded-md hover:scale-105 transition-transform duration-150 ${ className }`} href={ link }>
             <Icon />
             <p>{ text }</p>
         </Link>
