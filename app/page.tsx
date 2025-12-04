@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <section className="flex bg-background justify-center min-h-screen py-6">
+      <section className="flex bg-background justify-center min-h-screen py-3 md:py-6">
         <Hero />
       </section>
     </>
