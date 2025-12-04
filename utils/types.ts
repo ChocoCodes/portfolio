@@ -5,4 +5,5 @@ export type Project = {
     demoLink?: string;
     imgPath?: string;
     isFeatured?: boolean;
+    competition?: string;
 }

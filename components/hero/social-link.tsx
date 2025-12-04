@@ -16,7 +16,7 @@ const SocialIcon = ({ name, link, icon: Icon }: SocialIconProps) => {
             href={ link } 
             target={ name !== 'Email' ? "_blank" : '_self'}
             aria-label={ name }
-            className="text-default/80 flex justify-center items-center border border-default/80 rounded-sm p-1 w-5 h-5 md:w-10 md:h-10 hover:-translate-y-[5px] transition-transform duration-150"
+            className="text-default/80 flex justify-center items-center border border-default/80 rounded-sm p-1 w-5 h-5 md:w-10 md:h-10 hover:bg-default/80 hover:text-background transition-colors duration-300"
             rel="noopener noreferrer"
         >
             <Icon className='md:w-6 md:h-6 text-center' />

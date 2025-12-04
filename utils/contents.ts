@@ -22,7 +22,8 @@ export const PROJECTS: Project[] = [
         description: 'Proof-of-Concept Centralized Scholarship Management Platform', 
         githubLink: 'https://github.com/ChocoCodes/eskolar', 
         demoLink: 'https://drive.google.com/file/d/1QrwFCAgyd5lCa1kblCC9X1f-2Bm_GMco/view?usp=sharing', 
-        isFeatured: true
+        isFeatured: true,
+        competition: 'NextGenPH'
     },
     { 
         name: 'Kinot', 
@@ -36,6 +37,7 @@ export const PROJECTS: Project[] = [
         githubLink: 'https://github.com/ChocoCodes/solcha-bb', 
         demoLink: 'https://www.youtube.com/watch?v=EcPemPmNJa8',
         isFeatured: true,
+        competition: 'Google APAC Solution Challenge 2025'
     },
     { 
         name: 'Nixar POS', 
@@ -62,6 +64,19 @@ export const PROJECTS: Project[] = [
 ];
 
 export const FEATURES = [
-    { achievement: 'National Finalist', competition: 'NextGenPH', organizer: 'Development Academy of the Philippines', featureLink: '' },
-    { achievement: 'Participant', competition: 'Google APAC Solution Challenge 2025', organizer: 'Hack2Skill', featureLink: '' }
+    { 
+        achievement: 'National Finalist', 
+        competition: 'NextGenPH', 
+        organizer: 'Development Academy of the Philippines', 
+        featureLink: 'https://youtu.be/5QVBBuQlCVs',
+        title: 'eSkolar: AI-Powered Centralized Scholarship Management Platform',
+        description: 'Top 10 out of 400+ submissions.'
+    },
+    { 
+        achievement: 'Participant', 
+        competition: 'Google APAC Solution Challenge 2025', 
+        organizer: 'Hack2Skill',
+        featureLink: 'https://www.youtube.com/watch?v=EcPemPmNJa8',
+        title: 'Bantala: Community-Powered Disaster Web Application'
+    }
 ]

@@ -14,19 +14,21 @@ export const Hero = () => {
                 </div>
                 <p className="inline-flex gap-1 text-[10px] lg:text-lg items-center font-manrope text-secondary -mt-2 md:-mt-4"> <GrLocationPin /> Bacolod City, Philippines</p>
                 <p className="w-full text-[10px] lg:text-lg text-default">
-                    I specialize in building clean, practical, and effective solutions for 3 years. Currently serving as the <span className="font-semibold">Chief Technology Officer</span> and a former <span className="font-semibold">Web Development Lead</span>.
+                    I specialize in building clean, practical, and effective solutions for 3 years. 
+                    Currently serving as the <span className="font-semibold">Chief Technology Officer</span> and a former <span className="font-semibold">Web Development Lead</span> of  
+                    <span className="italic"> Google Developer Groups on Campus-USLS</span>.
                 </p>
                 <div className="flex gap-2 md:gap-4 items-center mt-1">
                     <CTA 
-                        className='border border-accent text-accent' 
+                        className='border border-accent text-accent hover:text-background hover:bg-accent transition-colors duration-200' 
                         icon={ FaDownload } 
                         text='Resume' 
                         link=''
                     />
                     <CTA 
-                        className='bg-accent text-default border-0' 
+                        className='bg-accent text-default border-0 hover:bg-accent/75 transition-colors duration-300' 
                         icon={ HiOutlineArrowNarrowRight } 
-                        text='My Projects' 
+                        text='My Works' 
                         link='/projects'
                     />
                 </div>

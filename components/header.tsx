@@ -35,7 +35,7 @@ const NavBar = ({ navClass = '', listClass, initial = false, animate = false }: 
                     <motion.li 
                         key={ nav.title } 
                         variants={ linkVariants }
-                        className={`${ currentPath === nav.link ? 'border-l-2 md:border-l-0 md:border-b-2 border-accent' : ''} px-2 md:px-1 md:pb-1`}
+                        className={`${ currentPath === nav.link ? 'border-l-2 md:border-l-0 md:border-b-2 border-accent' : 'hover:-translate-y-1 transition-transform duration-300'} px-2 md:px-1 md:pb-1`}
                     >
                         <Link href={ nav.link }>{ nav.title }</Link>
                     </motion.li>
