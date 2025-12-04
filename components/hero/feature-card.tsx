@@ -16,17 +16,17 @@ const FeatureCard = ({ achievement, competition, organizer, featureLink, title }
             href={ featureLink } 
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-4 border-2 border-accent rounded-lg p-4 w-full text-default shadow-[0_0_25px_0_rgba(56,189,248,0.15)] hover:-translate-y-1 transition-transform duration-200"
+            className="flex items-center gap-4 border-2 border-accent rounded-lg p-4 w-full text-default shadow-[0_0_25px_0_rgba(56,189,248,0.15)] hover:-translate-y-1 transition-transform duration-200 font-manrope"
         >
             <div className="flex items-center">
                 <LuTrophy className="text-4xl" />
             </div>
             <div className="flex flex-col gap-2">
                 <div className="flex flex-col">
-                    <p className="text-2xl font-bold">{ achievement }</p>
+                    <p className="text-2xl font-semibold">{ achievement }</p>
                     <p className="text-secondary/80 font-medium">{ competition } by { organizer }</p>
                 </div>
-                <p className="text-sm italic">{ title }</p>
+                <p className="text-xs italic">{ title }</p>
             </div>
         </Link>
     )

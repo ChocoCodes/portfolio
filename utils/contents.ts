@@ -1,7 +1,7 @@
 import { IoMail } from "react-icons/io5";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { IoLogoGithub } from "react-icons/io";
-import { Project } from './types';
+import { Project, Feature } from './types';
 
 export const NAV_ITEMS = [
     { title: 'Home', link: '/' },
@@ -63,14 +63,13 @@ export const PROJECTS: Project[] = [
     } 
 ];
 
-export const FEATURES = [
+export const FEATURES: Feature[] = [
     { 
         achievement: 'National Finalist', 
         competition: 'NextGenPH', 
         organizer: 'Development Academy of the Philippines', 
         featureLink: 'https://youtu.be/5QVBBuQlCVs',
         title: 'eSkolar: AI-Powered Centralized Scholarship Management Platform',
-        description: 'Top 10 out of 400+ submissions.'
     },
     { 
         achievement: 'Participant', 

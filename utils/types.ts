@@ -7,3 +7,11 @@ export type Project = {
     isFeatured?: boolean;
     competition?: string;
 }
+
+export type Feature = {
+    achievement: string;
+    competition: string;
+    organizer: string;
+    featureLink: string;
+    title: string;
+}
