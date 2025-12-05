@@ -1,3 +1,5 @@
+import { IconType } from "react-icons";
+
 export type Project = {
     name: string;
     description: string;
@@ -14,4 +16,10 @@ export type Feature = {
     organizer: string;
     featureLink: string;
     title: string;
+}
+
+export type TechStack = {
+    icon: IconType;
+    name: string;
+    type: "languages" | "tools" | "databases" | "frameworks/libraries"; 
 }

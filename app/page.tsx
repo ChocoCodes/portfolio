@@ -1,5 +1,5 @@
 import { Header } from '@/components/header';
-import { Hero, Features } from '@/components/hero/_components';
+import { Hero, Features, TechStackSection } from '@/components/hero/_components';
 import Image from 'next/image';
 
 export default function Home() {
@@ -14,6 +14,7 @@ export default function Home() {
             <Image src='/img/profile-octavio.jpg' alt="Image of John Octavio" fill className='object-cover rounded-lg'/>
           </div>
         </div>
+        <TechStackSection />
       </section>
     </>
   );

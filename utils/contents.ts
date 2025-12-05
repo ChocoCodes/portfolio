@@ -1,7 +1,21 @@
 import { IoMail } from "react-icons/io5";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { IoLogoGithub } from "react-icons/io";
-import { Project, Feature } from './types';
+import { Project, Feature, TechStack } from './types';
+import { BiLogoFirebase } from "react-icons/bi";
+import { 
+    SiReact, 
+    SiNextdotjs, 
+    SiJavascript, 
+    SiTypescript, 
+    SiHtml5, 
+    SiTailwindcss,
+    SiMysql,
+    SiSupabase,
+    SiPython,
+    SiArduino,
+    SiPhp
+} from "react-icons/si";
 
 export const NAV_ITEMS = [
     { title: 'Home', link: '/' },
@@ -78,4 +92,19 @@ export const FEATURES: Feature[] = [
         featureLink: 'https://www.youtube.com/watch?v=EcPemPmNJa8',
         title: 'Bantala: Community-Powered Disaster Web Application'
     }
+]
+
+export const TECH_STACK: TechStack[] = [
+    { icon: SiReact, name: 'React', type: "frameworks/libraries" },
+    { icon: SiNextdotjs, name: 'Next.js', type: "frameworks/libraries" },
+    { icon: SiTypescript, name: 'TypeScript', type: "languages" },
+    { icon: SiJavascript, name: 'JavaScript', type: "languages" },
+    { icon: SiHtml5, name: 'HTML5', type: "languages" },
+    { icon: SiTailwindcss, name: 'TailwindCSS', type: "frameworks/libraries" },
+    { icon: SiMysql, name: 'MySQL', type: "databases" },
+    { icon: SiSupabase, name: 'Supabase', type: "tools" },
+    { icon: BiLogoFirebase, name: 'Firebase', type: "databases" },
+    { icon: SiPython, name: 'Python', type: "languages" },
+    { icon: SiArduino, name: 'Arduino', type: "tools" },
+    { icon: SiPhp, name: 'PHP', type: "languages" }
 ]
