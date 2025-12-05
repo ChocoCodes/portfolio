@@ -37,7 +37,7 @@ const MarqueeItem = ({ items, isHidden = false, speed, direction }: MarqueeItemP
 const Marquee = ({ speed, items, direction = "right" }: MarqueeProps) => {
     return (
         <div 
-            className="w-full flex scrollbar-none mask-[linear-gradient(to_right,transparent,black_4rem,black_calc(100%-4rem),transparent)]"
+            className="w-full flex scrollbar-none mask-[linear-gradient(to_right,transparent,black_4rem,black_calc(100%-4rem),transparent)] py-1"
         >
             <MarqueeItem items={ items } speed={ speed } direction={ direction }/>
             <MarqueeItem items={ items } isHidden={ true } speed={ speed } direction={ direction } />
@@ -51,7 +51,7 @@ export const TechStackSection = () => {
     const bottomStack = TECH_STACK.filter(stack => !topStack.includes(stack));
 
     return (
-        <div className="w-4/5 md:w-3/5 flex flex-col mx-auto text-default gap-10 border-2 border-accent py-4 px-6 rounded-lg overflow-x-hidden">
+        <div className="w-4/5 md:w-3/5 flex flex-col mx-auto text-default gap-6 border-2 border-accent p-6 rounded-lg overflow-x-hidden">
             <p className="font-sora font-medium text-3xl">What I work with</p>
             <div className="flex flex-col gap-5">
                 <Marquee speed={ 20 } items={ topStack } />
