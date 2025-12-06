@@ -6,6 +6,7 @@
   --text-secondary: #ADA7A7;
   --accent-color: #06898F;
   --surface-color: #0B0B0E;
+  --green: #00A97A;
 }
 
 @theme inline {
@@ -15,7 +16,8 @@
   --color-default: var(--text-primary);
   --color-secondary: var(--text-secondary);
   --color-accent: var(--accent-color);  
-  --color-surface: var(--surface-color)
+  --color-surface: var(--surface-color);
+  --color-green: var(--green);
 }
 
 .scrollbar-none::-webkit-scrollbar {
