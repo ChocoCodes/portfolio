@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Header, Footer } from '@/components/_components';
 import localFont from 'next/font/local';
 import "./globals.css";
 
@@ -31,7 +32,11 @@ export default function RootLayout({
       <body
         className={`${ sora.variable } ${ manrope.variable } antialiased`}
       >
-        {children}
+      <Header />
+      <section className="flex flex-col bg-background gap-6 md:gap-10 min-h-screen py-3 items-center md:py-6">
+        { children }
+        <Footer />
+      </section>
       </body>
     </html>
   );
