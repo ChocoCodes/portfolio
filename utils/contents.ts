@@ -1,8 +1,12 @@
 import { IoMail } from "react-icons/io5";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { IoLogoGithub } from "react-icons/io";
-import { Project, Feature, TechStack } from './types';
 import { BiLogoFirebase } from "react-icons/bi";
+import { 
+    Project, 
+    Feature, 
+    TechStack 
+} from './types';
 import { 
     SiReact, 
     SiNextdotjs, 
@@ -24,6 +28,21 @@ export const NAV_ITEMS = [
     { title: 'Contact', link: '/contact' }
 ];
 
+export const TECH_STACK: TechStack[] = [
+    { icon: SiReact, name: 'React', type: "frameworks/libraries" },
+    { icon: SiNextdotjs, name: 'Next.js', type: "frameworks/libraries" },
+    { icon: SiTypescript, name: 'TypeScript', type: "languages" },
+    { icon: SiJavascript, name: 'JavaScript', type: "languages" },
+    { icon: SiHtml5, name: 'HTML5', type: "languages" },
+    { icon: SiTailwindcss, name: 'TailwindCSS', type: "frameworks/libraries" },
+    { icon: SiMysql, name: 'MySQL', type: "databases" },
+    { icon: SiSupabase, name: 'Supabase', type: "tools" },
+    { icon: BiLogoFirebase, name: 'Firebase', type: "databases" },
+    { icon: SiPython, name: 'Python', type: "languages" },
+    { icon: SiArduino, name: 'Arduino', type: "tools" },
+    { icon: SiPhp, name: 'PHP', type: "languages" }
+]
+
 export const SOCIALS = [
     { name: 'Email', link: 'mailto:johnrlnd1704@gmail.com?subject=Portfolio%20Inquiry', icon: IoMail },
     { name: 'Github', link: 'https://github.com/ChocoCodes', icon: IoLogoGithub },
@@ -37,13 +56,30 @@ export const PROJECTS: Project[] = [
         githubLink: 'https://github.com/ChocoCodes/eskolar', 
         demoLink: 'https://drive.google.com/file/d/1QrwFCAgyd5lCa1kblCC9X1f-2Bm_GMco/view?usp=sharing', 
         isFeatured: true,
-        competition: 'NextGenPH'
+        competition: 'NextGenPH',
+        imgPath: '/img/projects/eskolar.png',
+        tags: [
+            ...TECH_STACK.filter(t => (
+                ['Next.js', 'TypeScript', 'Supabase'].includes(t.name)
+            )),
+            "RAG",
+            "AI",
+        ]
     },
     { 
         name: 'Kinot', 
         description: 'Expense Tracking System for Harvard: CS50x', 
         githubLink: 'https://github.com/ChocoCodes/kinot', 
-        demoLink: 'https://www.youtube.com/watch?v=rR93CpdobmA', 
+        demoLink: 'https://www.youtube.com/watch?v=rR93CpdobmA',
+        imgPath: '/img/projects/kinot.png',
+        tags: [
+            ...TECH_STACK.filter(t => (
+                ['React', 'TypeScript', 'Python'].includes(t.name)
+            )),
+            "Harvard CS50x",
+            "SQLite",
+            "Flask",
+        ] 
     },
     { 
         name: 'Bantala', 
@@ -51,29 +87,61 @@ export const PROJECTS: Project[] = [
         githubLink: 'https://github.com/ChocoCodes/solcha-bb', 
         demoLink: 'https://www.youtube.com/watch?v=EcPemPmNJa8',
         isFeatured: true,
-        competition: 'Google APAC Solution Challenge 2025'
+        competition: 'Google APAC Solution Challenge 2025',
+        imgPath: '/img/projects/bantala.png',
+        tags: [
+            "RAG",
+            ...TECH_STACK.filter(t => (
+                ['Next.js', 'Firebase', 'TypeScript', 'Python'].includes(t.name)
+            ))
+        ]
     },
     { 
         name: 'Nixar POS', 
         description: 'Point of Sale (POS) System for Nixar Auto Glass & Car Tint', 
         githubLink: 'https://github.com/ChocoCodes/nixar-pos', 
-        demoLink: 'https://drive.google.com/file/d/1WrP2BQSUlMnlElFJBkaaJfB0jaCJPhhL/view?usp=sharing' 
+        demoLink: 'https://drive.google.com/file/d/1WrP2BQSUlMnlElFJBkaaJfB0jaCJPhhL/view?usp=sharing', 
+        imgPath: '/img/projects/nixar-pos.png',
+        tags: TECH_STACK.filter(t => (
+            ['PHP', 'MySQL', 'JavaScript'].includes(t.name)
+        ))
     },
     { 
         name: 'MatrixLab', 
         description: 'Simple Matrix Arithmetic Calculator', 
-        githubLink: 'https://github.com/ChocoCodes/matrix-lab' 
+        githubLink: 'https://github.com/ChocoCodes/matrix-lab',
+        imgPath: '/img/projects/matrixlab.png',
+        tags: [
+            ...TECH_STACK.filter(t => (
+                ['HTML5', 'JavaScript'].includes(t.name)
+            )),
+            "CSS"
+        ], 
     },
     { 
         name: 'Smart Irrigation System', 
         description: 'Smartphone-Controlled Irrigation System using HC05 Bluetooth module.', 
-        githubLink: 'https://github.com/ChocoCodes/automated-irrigation-system' 
+        githubLink: 'https://github.com/ChocoCodes/automated-irrigation-system',
+        imgPath: '/img/projects/smartphone.png',
+        tags: [
+            TECH_STACK.find(t => t.name === 'Arduino')!,
+            "MIT App Inventor",
+            "IoT"
+        ] 
     },
     { 
         name: 'Portfolio v0', 
         description: 'My Portfolio using Native Web Stack and PHP', 
         githubLink: 'https://github.com/ChocoCodes/cbad-midterm-portfolio', 
-        demoLink: 'https://drive.google.com/file/d/1RKcgusxV9cNrQ4cSfZMmr5toLY6ZHf8J/view?usp=sharing' 
+        demoLink: 'https://drive.google.com/file/d/1RKcgusxV9cNrQ4cSfZMmr5toLY6ZHf8J/view?usp=sharing', 
+        imgPath: '/img/projects/portfoliov0.png',
+        tags: [
+            ...TECH_STACK.filter(t => (
+                ['PHP', 'HTML5', 'JavaScript'].includes(t.name)
+            )),
+            'Bootstrap',
+            'CSS'
+        ]
     } 
 ];
 
@@ -92,19 +160,4 @@ export const FEATURES: Feature[] = [
         featureLink: 'https://www.youtube.com/watch?v=EcPemPmNJa8',
         title: 'Bantala: Community-Powered Disaster Web Application'
     }
-]
-
-export const TECH_STACK: TechStack[] = [
-    { icon: SiReact, name: 'React', type: "frameworks/libraries" },
-    { icon: SiNextdotjs, name: 'Next.js', type: "frameworks/libraries" },
-    { icon: SiTypescript, name: 'TypeScript', type: "languages" },
-    { icon: SiJavascript, name: 'JavaScript', type: "languages" },
-    { icon: SiHtml5, name: 'HTML5', type: "languages" },
-    { icon: SiTailwindcss, name: 'TailwindCSS', type: "frameworks/libraries" },
-    { icon: SiMysql, name: 'MySQL', type: "databases" },
-    { icon: SiSupabase, name: 'Supabase', type: "tools" },
-    { icon: BiLogoFirebase, name: 'Firebase', type: "databases" },
-    { icon: SiPython, name: 'Python', type: "languages" },
-    { icon: SiArduino, name: 'Arduino', type: "tools" },
-    { icon: SiPhp, name: 'PHP', type: "languages" }
 ]

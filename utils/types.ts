@@ -1,5 +1,7 @@
 import { IconType } from "react-icons";
 
+export type ProjectTag = string | TechStack;
+
 export type Project = {
     name: string;
     description: string;
@@ -8,6 +10,7 @@ export type Project = {
     imgPath?: string;
     isFeatured?: boolean;
     competition?: string;
+    tags?: ProjectTag[];
 }
 
 export type Feature = {

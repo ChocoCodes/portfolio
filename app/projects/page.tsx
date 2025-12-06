@@ -5,7 +5,8 @@ export const generateMetadata = () => {
   };
 }
 
-
 export default function Projects() {
-    
+	return (
+		<p className="text-start text-2xl font-semibold font-sora w-3/5 text-default">Featured Projects</p>
+	)
 }
