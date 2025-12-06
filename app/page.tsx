@@ -1,6 +1,10 @@
-import { Header } from '@/components/header';
-import { Hero, Features, TechStackSection } from '@/components/hero/_components';
 import Image from 'next/image';
+import { Header, Footer } from '@/components/_components';
+import { 
+  Hero, 
+  Features, 
+  TechStackSection
+} from '@/components/hero/_components';
 
 export default function Home() {
   return (
@@ -15,6 +19,7 @@ export default function Home() {
           </div>
         </div>
         <TechStackSection />
+        <Footer />
       </section>
     </>
   );
