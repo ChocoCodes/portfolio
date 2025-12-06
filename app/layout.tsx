@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Header, Footer } from '@/components/_components';
 import localFont from 'next/font/local';
 import "./globals.css";
@@ -17,10 +16,12 @@ const manrope = localFont({
   weight: '200 800'
 });
 
-export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "John Octavio's Personal Porfolio",
-};
+export const generateMetadata = () => {
+  return {
+    title: `Home | John Octavio`,
+    description: `Home Page of John Octavio's Personal Portfolio`
+  };
+}
 
 export default function RootLayout({
   children,
@@ -32,11 +33,11 @@ export default function RootLayout({
       <body
         className={`${ sora.variable } ${ manrope.variable } antialiased`}
       >
-      <Header />
-      <section className="flex flex-col bg-background gap-6 md:gap-10 min-h-screen py-3 items-center md:py-6">
+      <main className="flex flex-col bg-background gap-6 min-h-screen items-center">
+        <Header />
         { children }
         <Footer />
-      </section>
+      </main>
       </body>
     </html>
   );

@@ -1,12 +1,11 @@
-import { SocialLinks } from '@/components/hero/_components';
-
 export const Footer = () => {
     return (
-        <footer className="w-4/5 md:w-3/5 text-default font-sora py-2 mt-auto flex items-center justify-between">
-            <SocialLinks borderedIcons={ false } />
-            <div className="flex gap-1 md:gap-2 text-[8px] md:text-base items-center">
-                <p className="text-[8px] md:text-base">&copy; { new Date().getFullYear() } </p> 
-                <p>John Roland Octavio</p>
+        <footer className="w-4/5 md:w-3/5 text-default font-sora py-5 mt-auto flex flex-col items-center justify-center text-[10px] gap-1 md:text-xl font-normal">
+            <p>Built using <span className="font-semibold">Next.js</span>, <span className="font-semibold">TypeScript</span>, and <span className="font-semibold">Tailwind</span>.</p>
+            <div className="flex gap-2">
+                <p>&copy;</p>
+                <p>{ new Date().getFullYear() }</p>
+                <p>John Octavio.</p>
             </div>
         </footer>
     )
