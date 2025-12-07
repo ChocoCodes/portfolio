@@ -7,7 +7,7 @@ export const TechStackSection = () => {
             <p className="font-sora font-semibold text-lg md:text-3xl">What I work with</p>
             <div className="flex flex-wrap gap-2 md:gap-4 w-full">
                 { TECH_STACK.map((stack, i) => (
-                    <Tag key={ i } icon={ stack.icon } text={ stack.name } bordered={ false } />
+                    <Tag key={ i } icon={ stack.icon } text={ stack.name } bordered={ false } extendedClass='px-3 py-2 shadow-md text-xs md:text-base shadow-default/40'/>
                 ))}
             </div>
         </div>

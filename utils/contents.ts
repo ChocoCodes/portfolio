@@ -52,7 +52,7 @@ export const SOCIALS = [
 export const PROJECTS: Project[] = [
     { 
         name: 'eSkolar', 
-        description: 'Proof-of-Concept Centralized Scholarship Management Platform', 
+        description: 'Proof-of-Concept Centralized Scholarship Management Platform.', 
         githubLink: 'https://github.com/ChocoCodes/eskolar', 
         demoLink: 'https://drive.google.com/file/d/1QrwFCAgyd5lCa1kblCC9X1f-2Bm_GMco/view?usp=sharing', 
         isFeatured: true,
@@ -68,7 +68,7 @@ export const PROJECTS: Project[] = [
     },
     { 
         name: 'Kinot', 
-        description: 'Expense Tracking System for Harvard: CS50x', 
+        description: 'Expense Tracking System for Harvard: CS50x.', 
         githubLink: 'https://github.com/ChocoCodes/kinot', 
         demoLink: 'https://www.youtube.com/watch?v=rR93CpdobmA',
         imgPath: '/img/projects/kinot.png',
@@ -76,29 +76,24 @@ export const PROJECTS: Project[] = [
             ...TECH_STACK.filter(t => (
                 ['React', 'TypeScript', 'Python'].includes(t.name)
             )),
-            "Harvard CS50x",
-            "SQLite",
             "Flask",
         ] 
     },
     { 
         name: 'Bantala', 
-        description: 'Community-Powered Web Application with RAG',
+        description: 'Community-Powered Web Application with RAG.',
         githubLink: 'https://github.com/ChocoCodes/solcha-bb', 
         demoLink: 'https://www.youtube.com/watch?v=EcPemPmNJa8',
         isFeatured: true,
         competition: 'Google APAC Solution Challenge 2025',
         imgPath: '/img/projects/bantala.png',
-        tags: [
-            "RAG",
-            ...TECH_STACK.filter(t => (
+        tags: TECH_STACK.filter(t => (
                 ['Next.js', 'Firebase', 'TypeScript', 'Python'].includes(t.name)
-            ))
-        ]
+        ))
     },
     { 
         name: 'Nixar POS', 
-        description: 'Point of Sale (POS) System for Nixar Auto Glass & Car Tint', 
+        description: 'Point of Sale (POS) system for Nixar Auto Glass & Car Tint.', 
         githubLink: 'https://github.com/ChocoCodes/nixar-pos', 
         demoLink: 'https://drive.google.com/file/d/1WrP2BQSUlMnlElFJBkaaJfB0jaCJPhhL/view?usp=sharing', 
         imgPath: '/img/projects/nixar-pos.png',
@@ -108,8 +103,9 @@ export const PROJECTS: Project[] = [
     },
     { 
         name: 'MatrixLab', 
-        description: 'Simple Matrix Arithmetic Calculator', 
+        description: 'Simple Matrix Arithmetic calculator.', 
         githubLink: 'https://github.com/ChocoCodes/matrix-lab',
+        demoLink: 'https://matrix-lab-sigma.vercel.app/',
         imgPath: '/img/projects/matrixlab.png',
         tags: [
             ...TECH_STACK.filter(t => (
@@ -120,7 +116,7 @@ export const PROJECTS: Project[] = [
     },
     { 
         name: 'Smart Irrigation System', 
-        description: 'Smartphone-Controlled Irrigation System using HC05 Bluetooth module.', 
+        description: 'Smartphone-Controlled Irrigation System using HC05 bluetooth module.', 
         githubLink: 'https://github.com/ChocoCodes/automated-irrigation-system',
         imgPath: '/img/projects/smartphone.png',
         tags: [
@@ -131,7 +127,7 @@ export const PROJECTS: Project[] = [
     },
     { 
         name: 'Portfolio v0', 
-        description: 'My Portfolio using Native Web Stack and PHP', 
+        description: 'My portfolio using native web stack and PHP.', 
         githubLink: 'https://github.com/ChocoCodes/cbad-midterm-portfolio', 
         demoLink: 'https://drive.google.com/file/d/1RKcgusxV9cNrQ4cSfZMmr5toLY6ZHf8J/view?usp=sharing', 
         imgPath: '/img/projects/portfoliov0.png',
@@ -141,6 +137,19 @@ export const PROJECTS: Project[] = [
             )),
             'Bootstrap',
             'CSS'
+        ]
+    },
+    {
+        name: 'Scientia Aeternum',
+        description: 'Curated reflections and key takeaways from the STS course.',
+        githubLink: 'https://github.com/ChocoCodes/scientia-aeternum',
+        demoLink: 'https://scientia-aeternum.vercel.app',
+        imgPath: '/img/projects/aeternum.png',
+        tags: [
+            ...TECH_STACK.filter(t => (
+                ['React', 'TypeScript'].includes(t.name)
+            )),
+            "CSS",
         ]
     } 
 ];
