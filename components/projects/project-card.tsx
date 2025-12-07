@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { ProjectTag } from '@/utils/types';
 import Image from 'next/image';
 import { Tag } from '../_components';
+import { ExternalLink } from './external-link';
 
 interface ProjectCardProps {
     name: string;
@@ -25,6 +26,10 @@ export const ProjectCard = ({
     tags
 }: ProjectCardProps) => {
     const [tapped, setTapped] = useState(false);
+    const links = [
+        githubLink ? { href: githubLink, icon: 'github' } : null,
+        demoLink ? { href: demoLink, icon: 'external' } : null,
+    ];
 
     const handleMobileTap = (e: React.MouseEvent<HTMLDivElement>) => {
         if (window.innerWidth > 768) return;
@@ -47,6 +52,20 @@ export const ProjectCard = ({
             />
             <div className="absolute inset-0 bg-black opacity-20 md:opacity-10 pointer-events-none rounded-lg" />
 
+            <div 
+                className={`
+                    absolute top-0 w-full flex justify-end gap-1 p-3
+                    md:translate-y-full md:opacity-0 transition-all duration-300
+                    md:group-hover:translate-y-0 md:group-hover:opacity-100
+                    ${ tapped ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0' }
+                `}
+            >
+                {links.map((link, i) => (
+                    link ? (
+                        <ExternalLink key={ i } href={ link.href! } icon={ link.icon as "github" | "external" } /> 
+                    ) : null
+                ))}
+            </div>
             <div 
                 className={`
                     w-full flex flex-col gap-2 absolute z-10 bottom-0
@@ -74,7 +93,6 @@ export const ProjectCard = ({
                     )}
                 </div>
             </div>
-
         </div>
     )
 }
