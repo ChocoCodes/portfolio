@@ -8,6 +8,7 @@ import {
     TechStack 
 } from './types';
 import { 
+    SiDiscord,
     SiReact, 
     SiNextdotjs, 
     SiJavascript, 
@@ -44,9 +45,10 @@ export const TECH_STACK: TechStack[] = [
 ]
 
 export const SOCIALS = [
-    { name: 'Email', link: 'mailto:johnrlnd1704@gmail.com?subject=Portfolio%20Inquiry', icon: IoMail },
-    { name: 'Github', link: 'https://github.com/ChocoCodes', icon: IoLogoGithub },
+    { name: 'Email', link: 'mailto:johnrlnd1704@gmail.com?subject=Inquiry%20From%20Porfolio', icon: IoMail, contact: 'johnrlnd1704@gmail.com' },
+    { name: 'Github', link: 'https://github.com/ChocoCodes', icon: IoLogoGithub, contact: 'ChocoCodes' },
     { name: 'LinkedIn', link: 'https://www.linkedin.com/in/johnrlnd', icon: FaLinkedinIn },
+    { name: 'Discord', link: 'https://discord.com/users/335627275821252608', icon: SiDiscord, contact: 'ambasingh404' }
 ];
 
 export const PROJECTS: Project[] = [

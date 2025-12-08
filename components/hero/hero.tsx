@@ -21,7 +21,7 @@ export const Hero = () => {
                 <p className="inline-flex gap-1 text-[8px] lg:text-lg items-center font-manrope text-secondary -mt-2 md:-mt-4"> <GrLocationPin /> Bacolod City, Philippines</p>
                 <p className="w-full text-[10px] lg:text-lg text-default">
                     I specialize in building clean, practical, and effective solutions for 3 years. 
-                    Currently serving as the <span className="font-semibold">Chief Technology Officer</span> and a former <span className="font-semibold">Web Development Lead</span> of  
+                    Currently serving as the <span className="font-semibold">Chief Technology Officer</span> and was a former <span className="font-semibold">Web Development Lead</span> of  
                     <span className="italic"> Google Developer Groups on Campus-USLS</span>.
                 </p>
                 <div className="flex gap-2 md:gap-4 items-center mt-1">

@@ -55,9 +55,9 @@ export const ProjectCard = ({
             <div 
                 className={`
                     absolute top-0 w-full flex justify-end gap-1 p-3
-                    md:translate-y-full md:opacity-0 transition-all duration-300
+                    md:-translate-y-full md:opacity-0 transition-all duration-300
                     md:group-hover:translate-y-0 md:group-hover:opacity-100
-                    ${ tapped ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0' }
+                    ${ tapped ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0' }
                 `}
             >
                 {links.map((link, i) => (

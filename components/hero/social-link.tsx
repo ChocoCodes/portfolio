@@ -8,23 +8,25 @@ interface SocialIconProps {
     name: string;
     link: string;
     icon: IconType;
-    borderedIcons: boolean;
+    borderedIcons?: boolean;
+    extendedClass: string;
+    iconSize: string;
 }
 
 interface SocialLinksProps {
     borderedIcons?: boolean;
 }
 
-const SocialIcon = ({ name, link, icon: Icon, borderedIcons }: SocialIconProps) => {
+export const SocialIcon = ({ name, link, icon: Icon, borderedIcons, extendedClass, iconSize }: SocialIconProps) => {
     return (
         <Link 
             href={ link } 
             target={ name !== 'Email' ? "_blank" : '_self' } 
             aria-label={ name }
-            className={`${ borderedIcons ? 'border border-default/80' : '' } text-default/80 flex justify-center items-center bg-surface rounded-sm p-1 w-5 h-5 md:w-10 md:h-10 hover:bg-default/80 hover:text-background transition-colors duration-300`}
+            className={`${ borderedIcons ? 'border border-default/80' : '' } ${ extendedClass } text-default/80 flex justify-center items-center bg-surface rounded-sm p-1 hover:bg-default/80 hover:text-background transition-colors duration-300`}
             rel="noopener noreferrer"
         >
-            <Icon className='md:w-6 md:h-6 text-center' />
+            <Icon className={`${ iconSize } text-center`} />
         </Link>
     )
 }
@@ -32,8 +34,14 @@ const SocialIcon = ({ name, link, icon: Icon, borderedIcons }: SocialIconProps) 
 export const SocialLinks = ({ borderedIcons = true }: SocialLinksProps) => {
     return (
         <div className="flex gap-2 md:gap-3 items-center">
-            {SOCIALS.map((social, i) => (
-                <SocialIcon key={ i } name={ social.name } link={ social.link } icon={ social.icon } borderedIcons={ borderedIcons } />
+            {SOCIALS.filter(social => social.name !== 'Discord').map((social, i) => (
+                <SocialIcon 
+                    key={ i } 
+                    { ...social }
+                    borderedIcons={ borderedIcons } 
+                    extendedClass='w-5 h-5 md:w-10 md:h-10' 
+                    iconSize='md:w-6 md:h-6'
+                />
             ))}
         </div>
     )
