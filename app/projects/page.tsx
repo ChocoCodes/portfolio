@@ -1,10 +1,10 @@
 import { ProjectsSection } from "@/components/projects/projects-section";
-export const generateMetadata = () => {
-  return {
-    title: `Projects | John Octavio`,
-    description: `Projects Page of John Octavio's Personal Portfolio`
-  };
-}
+
+export const metadata = {
+  title: "Projects",
+  description: "Showcasing featured projects by John Octavio, including web development and embedded system works."
+};
+
 
 export default function Projects() {
 	return (

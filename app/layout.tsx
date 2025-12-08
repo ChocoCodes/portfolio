@@ -16,12 +16,14 @@ const manrope = localFont({
   weight: '200 800'
 });
 
-export const generateMetadata = () => {
-  return {
-    title: `Home | John Octavio`,
-    description: `Home Page of John Octavio's Personal Portfolio`
-  };
-}
+export const metadata = {
+  metadataBase: new URL("https://johnrlnd.dev"),
+  title: {
+    default: "John Octavio",
+    template: "%s | John Octavio"
+  },
+  description: "Portfolio website of John Roland Octavio."
+};
 
 export default function RootLayout({
   children,

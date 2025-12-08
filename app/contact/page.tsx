@@ -1,20 +1,24 @@
 import Image from 'next/image';
 import { ContactLinks } from '@/components/contact/_components';
 
-export const generateMetadata = () => {
-  return {
-    title: `Contact | John Octavio`,
-    description: `Contact Page of John Octavio's Personal Portfolio`
-  };
-}
+export const metadata = {
+    title: "Contact",
+    description: "Get in touch with John Octavio to discuss projects, collaborations, or opportunities."
+};
+
 
 export default function Contact() {
     return (
       <>
         <div className="w-3/5 md:w-4/5 flex flex-col gap-8 items-center justify-center font-manrope my-auto">
-          <div className="flex w-1/4 gap-4 mx-auto text-default items-center">
+          <div className="flex md:w-1/4 gap-4 mx-auto text-default items-center">
             <div className="relative w-20 h-20">
-              <Image src="/img/profile-octavio.jpg" alt='Image of John Roland Octavio' fill className='object-cover rounded-full'/>
+              <Image 
+                src="/img/profile-octavio.jpg" 
+                alt='Image of John Roland Octavio' 
+                fill
+                className='object-cover rounded-full'
+              />
             </div>
             <div className="flex flex-col">
               <p className='text-xs md:text-base font-medium'>John Roland Octavio</p>

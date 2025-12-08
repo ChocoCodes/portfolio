@@ -1,12 +1,11 @@
 import { Tabs } from '@/components/about/tabs';
 import { CertsMarquee } from '@/components/about/certs-marquee';
 
-export const generateMetadata = () => {
-  return {
-    title: `About | John Octavio`,
-    description: `About Page of John Octavio's Personal Portfolio`
-  };
-}
+export const metadata = {
+    title: "About",
+    description: "Learn more about John Octavio, his experience, skills, and interests in software development."
+};
+
 
 export default function About() {
   return (

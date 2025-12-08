@@ -33,7 +33,7 @@ const MarqueeItem = ({ items, isHidden = false, speed, direction }: MarqueeItemP
 export const CertsMarquee = () => {
     return (
         <div 
-            className="marquee-container w-full flex scrollbar-none mask-[linear-gradient(to_right,transparent,black_4rem,black_calc(100%-2rem),transparent)] overflow-hidden"
+            className="marquee-container w-full flex scrollbar-none mask-[linear-gradient(to_right,transparent,black_4rem,black_calc(100%-2rem),transparent)] overflow-hidden hover:cursor-pointer"
         >
             <MarqueeItem items={ CERTS } speed={ 20 } direction={ "left" } />
             <MarqueeItem items={ CERTS } isHidden={ true } speed={ 20 } direction={ "left" } />
