@@ -59,7 +59,7 @@ export const PROJECTS: Project[] = [
         demoLink: 'https://drive.google.com/file/d/1QrwFCAgyd5lCa1kblCC9X1f-2Bm_GMco/view?usp=sharing', 
         isFeatured: true,
         competition: 'NextGenPH',
-        imgPath: '/img/projects/eskolar.png',
+        imgPath: '/img/projects/eskolar-login.png',
         tags: [
             ...TECH_STACK.filter(t => (
                 ['Next.js', 'TypeScript', 'Supabase'].includes(t.name)
