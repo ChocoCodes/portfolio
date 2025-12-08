@@ -26,3 +26,8 @@ export type TechStack = {
     name: string;
     type: "languages" | "tools" | "databases" | "frameworks/libraries"; 
 }
+
+export type Certificate = {
+    title: string;
+    path: string;
+}

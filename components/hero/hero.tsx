@@ -29,7 +29,7 @@ export const Hero = () => {
                         className='border border-accent text-accent hover:text-background hover:bg-accent transition-colors duration-200' 
                         icon={ FaDownload } 
                         text='Resume' 
-                        link=''
+                        link='https://drive.google.com/file/d/1DSpayPFPo9L_05WBO_2r7YBQLbqk583P/view?usp=sharing'
                     />
                     <CTA 
                         className='bg-accent text-default border-0 hover:bg-accent/75 transition-colors duration-300' 

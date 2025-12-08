@@ -130,7 +130,7 @@ export const PROJECTS: Project[] = [
     { 
         name: 'Portfolio v0', 
         description: 'My portfolio using native web stack and PHP.', 
-        githubLink: 'https://github.com/ChocoCodes/cbad-midterm-portfolio', 
+        githubLink: 'https://github.com/ChocoCodes/cbad-midduration-portfolio', 
         demoLink: 'https://drive.google.com/file/d/1RKcgusxV9cNrQ4cSfZMmr5toLY6ZHf8J/view?usp=sharing', 
         imgPath: '/img/projects/portfoliov0.png',
         tags: [
@@ -171,4 +171,22 @@ export const FEATURES: Feature[] = [
         featureLink: 'https://www.youtube.com/watch?v=EcPemPmNJa8',
         title: 'Bantala: Community-Powered Disaster Web Application'
     }
+]
+
+export const CERTS = [
+    { title: 'Harvard CS50x: Intro to CS', path: '/img/certificates/cs50x-2025.png' },
+    { title: 'APAC Solution Challenge 2025', path: '/img/certificates/solcha.png' },
+    { title: 'Python Data Associate', path: '/img/certificates/python-data-associate.png' },
+    { title: 'SQL Associate', path: '/img/certificates/sql-associate.png' },
+    { title: 'Scrimba: Advanced JavaScript', path: '/img/certificates/advanced-js.png' },
+    { title: 'Scrimba: Tailwind CSS', path: '/img/certificates/tailwind.png' },
+    { title: 'Scrimba: TypeScript', path: '/img/certificates/typescript.png' },
+]
+
+export const PROFESSIONAL_DETAILS = [
+    { domain: 'experience', title: 'Chief Technology Officer', name: 'Byte Me! (eSkolar)', duration: 'Oct 2025 - Nov 2025' },
+    { domain: 'experience', title: 'Chief Technology Officer', name: 'Google Developer Groups on Campus - USLS', duration: 'Oct 2024 - Present' },
+    { domain: 'experience', title: 'Web Development Lead', name: 'Google Developer Groups on Campus - USLS', duration: 'Aug 2024 - Oct 2024' },
+    { domain: 'education', title: 'University of St. La Salle - Bacolod', name: 'Bachelor of Science in Computer Science Major in Game Development', duration: 'Aug 2023 - Jun 2027' },
+    { domain: 'education', title: 'University of Negros Occidental-Recoletos', name: 'STEM - Engineering and Information Technology', duration: 'June 2021 - May 2023' },
 ]
