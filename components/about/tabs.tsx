@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import { PROFESSIONAL_DETAILS } from '@/utils/contents';
+import { motion } from 'motion/react';
+import { childVariant } from '@/utils/motion-variants';
 
 type TabKey = "experience" | "education";
 
@@ -58,9 +60,15 @@ export const Tabs = () => {
     const [currentTab, setCurrentTab] = useState<TabKey>("experience");
 
     return (
-        <div className='flex flex-col gap-5'>
+        <motion.div 
+            className='flex flex-col gap-5'
+            variants={ childVariant }
+            initial="closed"
+            animate="open"
+            transition={{ delay: 0.3, duration: 0.3, ease: "easeInOut" }}
+        >
             <TabHeader currentTab={ currentTab } setCurrentTab={ setCurrentTab } />
             <TabContent currentTab={ currentTab }/>
-        </div>
+        </motion.div>
     )
 }
