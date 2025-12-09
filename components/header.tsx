@@ -36,6 +36,7 @@ const NavBar = ({ navClass = '', listClass, initial = false, animate = false }: 
                         key={ nav.title } 
                         variants={ linkVariants }
                         className={`${ currentPath === nav.link ? 'border-l-2 md:border-l-0 md:border-b-2 border-accent' : '' } px-2 md:px-1 md:pb-1`}
+                        whileHover={ currentPath !== nav.link ? { y: -5 } : {}}
                     >
                         <Link href={ nav.link }>{ nav.title }</Link>
                     </motion.li>
@@ -81,7 +82,7 @@ export const Header = () => {
         >
             <motion.div 
                 className="flex w-full md:w-3/5 justify-between items-center mx-auto" 
-                variants={containerVariants}
+                variants={ containerVariants }
                 initial="closed"
                 animate="open"
             >

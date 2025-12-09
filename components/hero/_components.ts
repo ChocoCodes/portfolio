@@ -3,11 +3,13 @@ import { Features } from './feature-card';
 import { Hero } from './hero';
 import { SocialLinks } from './social-link';
 import { TechStackSection } from './tech-stack';
+import { FeatureSection } from './feature-section';
 
 export { 
     CTA,
     Features,
     Hero,
     SocialLinks,
-    TechStackSection
+    TechStackSection,
+    FeatureSection
 };

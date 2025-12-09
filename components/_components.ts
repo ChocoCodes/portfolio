@@ -5,5 +5,5 @@ import { Footer } from './footer';
 export { 
     Header, 
     Tag,
-    Footer 
+    Footer,
 };

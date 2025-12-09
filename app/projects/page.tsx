@@ -9,7 +9,7 @@ export const metadata = {
 export default function Projects() {
 	return (
     <>
-      <p className="text-start text-2xl font-semibold font-sora w-3/5 text-default">Featured Projects</p>
+      <p className="text-start text-sm md:text-2xl font-semibold font-sora w-3/5 text-default">Featured Projects</p>
       <ProjectsSection />
     </>
 	)

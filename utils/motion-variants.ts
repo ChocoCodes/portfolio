@@ -3,7 +3,7 @@ import { Variants } from 'motion/react';
 export const linkVariants: Variants = {
     closed: { 
         opacity: 0, 
-        y: -50 
+        y: -20 
     },
     open: {
         opacity: 1,
@@ -14,6 +14,11 @@ export const linkVariants: Variants = {
         }
     }
 }
+
+export const childVariant: Variants = {
+  closed: { opacity: 0, y: -20 },
+  open: { opacity: 1, y: 0 },
+};
 
 export const containerVariants: Variants = {
     closed: {
@@ -26,7 +31,8 @@ export const containerVariants: Variants = {
         transition: {
             duration: 0.25,
             ease: "easeInOut",
-            when: "beforeChildren"
+            when: "afterChildren",
+            staggerChildren: 0.3
         }
     }
 }
@@ -51,7 +57,6 @@ export const navVariants = {
         }
     }
 };
-
 
 export const mobileVariants: Variants = {
     closed: {

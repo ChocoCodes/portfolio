@@ -35,10 +35,10 @@ export default function RootLayout({
       <body
         className={`${ sora.variable } ${ manrope.variable } antialiased`}
       >
-      <main className="flex flex-col bg-background gap-6 min-h-screen items-center">
-        <Header />
-        { children }
-        <Footer />
+      <main className="bg-background flex flex-col w-full gap-6 min-h-screen items-center">
+          <Header />
+          { children }
+          <Footer />
       </main>
       </body>
     </html>
