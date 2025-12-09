@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { PROFESSIONAL_DETAILS } from '@/utils/contents';
+import { StaggerWrapper } from '../stagger-wrapper';
 import { motion } from 'motion/react';
-import { childVariant } from '@/utils/motion-variants';
 
 type TabKey = "experience" | "education";
 
@@ -28,9 +28,20 @@ export const TabHeader = ({ currentTab, setCurrentTab }: TabHeaderProps) => {
                     <button 
                         key={ i } 
                         onClick={ () => setCurrentTab(tab) }
-                        className={`${ isSelected ? 'bg-accent text-surface' : 'text-accent'} text-[10px] md:text-lg w-1/2 p-1 rounded-sm hover:cursor-pointer`}
+                        className={`${ isSelected ? 'bg-accent text-surface' : 'text-accent'} relative text-[10px] md:text-lg w-1/2 p-1 rounded-sm hover:cursor-pointer`}
+                        style={{ background: "none", border: "none" }}
+                        tabIndex={0}
                     >
-                        { label }
+                        {isSelected && (
+                            <motion.div
+                                layoutId="tab-bg"
+                                className="absolute inset-0 bg-accent rounded-sm z-0"
+                                transition={{ type: "spring", bounce: 0.3, duration: 0.5 }}
+                            />
+                        )}
+                        <span className={`relative z-10 ${isSelected ? "text-surface" : "text-accent"}`}>
+                            {label}
+                        </span>
                     </button>
                 )
             })}
@@ -60,15 +71,9 @@ export const Tabs = () => {
     const [currentTab, setCurrentTab] = useState<TabKey>("experience");
 
     return (
-        <motion.div 
-            className='flex flex-col gap-5'
-            variants={ childVariant }
-            initial="closed"
-            animate="open"
-            transition={{ delay: 0.3, duration: 0.3, ease: "easeInOut" }}
-        >
+        <StaggerWrapper delay={ 0.3 } className='flex flex-col gap-5'>
             <TabHeader currentTab={ currentTab } setCurrentTab={ setCurrentTab } />
             <TabContent currentTab={ currentTab }/>
-        </motion.div>
+        </StaggerWrapper>
     )
 }

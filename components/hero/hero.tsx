@@ -5,17 +5,12 @@ import { CTA } from './cta';
 import { SocialLinks } from "./social-link";
 import { FaDownload } from "react-icons/fa6";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
-import { childVariant } from "@/utils/motion-variants";
-import { motion } from 'motion/react';
+import { StaggerWrapper } from "../stagger-wrapper";
 
 export const Hero = () => {
     return (
-        <motion.div 
-            variants={ childVariant }
-            initial="closed"
-            animate="open"
+        <StaggerWrapper delay={ 0.2 }
             className="flex flex-col justify-start w-4/5 md:w-3/5 border gap-2 md:gap-4 border-accent rounded-lg mx-auto p-4 md:py-6 md:px-8"
-            transition={{ delay: 0.2, duration: 0.3, ease: "easeInOut" }}
         >
             <div className="flex justify-between items-center">
                 <div className="flex gap-2 md:gap-4 items-center">
@@ -48,6 +43,6 @@ export const Hero = () => {
                     toSelf={ true }
                 />
             </div>
-        </motion.div>
+        </StaggerWrapper>
     )
 }

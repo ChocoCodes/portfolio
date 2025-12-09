@@ -3,6 +3,7 @@ import { IconType } from "react-icons";
 import { SocialIcon } from "../hero/social-link";
 import { CopyButton } from "./_components";
 import { SOCIALS } from "@/utils/contents";
+import { StaggerWrapper } from "../stagger-wrapper";
 
 interface ContactLinkProps { 
     name: string;
@@ -35,7 +36,10 @@ export const ContactLink = ({ name, link, icon, borderedIcons = true, contact, e
 
 export const ContactLinks = () => {
     return (
-        <div className="flex flex-col md:flex-row gap-8 md:gap-14 justify-center w-full">
+        <StaggerWrapper 
+            delay={ 0.4 }
+            className="flex flex-col md:flex-row gap-8 md:gap-14 justify-center w-full"
+        >
             {SOCIALS.map((social, i) => (
                 <ContactLink 
                     key={ i } 
@@ -45,6 +49,6 @@ export const ContactLinks = () => {
                     iconSize="w-6 h-6 md:w-8 md:h-8"
                 />
             ))}
-        </div>
+        </StaggerWrapper>
     )
 }

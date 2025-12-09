@@ -1,4 +1,5 @@
-import { ProjectsSection } from "@/components/projects/projects-section";
+import { ProjectsSection } from "@/components/projects/projects-gallery";
+
 
 export const metadata = {
   title: "Projects",
@@ -9,7 +10,6 @@ export const metadata = {
 export default function Projects() {
 	return (
     <>
-      <p className="text-start text-sm md:text-2xl font-semibold font-sora w-3/5 text-default">Featured Projects</p>
       <ProjectsSection />
     </>
 	)
