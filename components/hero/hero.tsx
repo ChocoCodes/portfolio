@@ -45,6 +45,7 @@ export const Hero = () => {
                     icon={ HiOutlineArrowNarrowRight } 
                     text='My Works' 
                     link='/projects'
+                    toSelf={ true }
                 />
             </div>
         </motion.div>
