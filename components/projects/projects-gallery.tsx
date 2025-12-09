@@ -22,7 +22,7 @@ export const ProjectsSection = () => {
         <>
             <StaggerWrapper
                 delay={ 0.1 }
-                className="w-3/5 text-start text-sm md:text-3xl font-semibold font-sora text-default"
+                className="w-4/5 md:w-3/5 text-start text-xl md:text-3xl font-semibold font-sora text-default"
             >
                 <p>Featured Projects</p>
             </StaggerWrapper>
