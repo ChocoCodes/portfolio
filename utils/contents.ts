@@ -130,7 +130,7 @@ export const PROJECTS: Project[] = [
     { 
         name: 'Portfolio v0', 
         description: 'My portfolio using native web stack and PHP.', 
-        githubLink: 'https://github.com/ChocoCodes/cbad-midduration-portfolio', 
+        githubLink: 'https://github.com/ChocoCodes/cbad-midterm-portfolio', 
         demoLink: 'https://drive.google.com/file/d/1RKcgusxV9cNrQ4cSfZMmr5toLY6ZHf8J/view?usp=sharing', 
         imgPath: '/img/projects/portfoliov0.png',
         tags: [
