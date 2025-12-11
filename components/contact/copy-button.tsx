@@ -19,8 +19,8 @@ export const CopyButton = ({ value }: CopyButtonProps) => {
     }
     
     return (
-        <div className="relative group flex items-center hover:cursor-pointer text-lg text-secondary font-manrope">
-            <button onClick={ handleCopy }>
+        <div className="relative group flex items-center text-lg text-secondary font-manrope">
+            <button onClick={ handleCopy } className="hover:cursor-pointer">
                 { copied ? <FaCheck /> : <MdOutlineContentCopy /> }
             </button>
             <span 
