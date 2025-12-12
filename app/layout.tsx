@@ -1,4 +1,6 @@
 import { Header, Footer } from '@/components/_components';
+import { ChatBubble } from './chat/chat-bubble';
+
 import localFont from 'next/font/local';
 import "./globals.css";
 
@@ -35,11 +37,12 @@ export default function RootLayout({
       <body
         className={`${ sora.variable } ${ manrope.variable } antialiased`}
       >
-      <main className="bg-background flex flex-col w-full gap-6 min-h-screen items-center">
+      <main className="relative bg-background flex flex-col w-full gap-6 min-h-screen items-center">
           <Header />
           { children }
           <Footer />
       </main>
+      <ChatBubble />
       </body>
     </html>
   );
