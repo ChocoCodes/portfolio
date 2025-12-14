@@ -1,7 +1,4 @@
 import { IconType } from "react-icons";
-import { motion } from 'motion/react';
-
-export type MotionProps = React.ComponentProps<typeof motion.div>;
 
 export type ProjectTag = string | TechStack;
 

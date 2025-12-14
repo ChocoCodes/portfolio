@@ -1,8 +1,10 @@
 "use client";
+
 // import { useState } from 'react';
 import { motion, Variants } from 'motion/react';
 import Image from 'next/image';
 import { FiMinimize2 } from "react-icons/fi";
+import { ChatMessage } from './chat-message';
 
 const chatPanelVariants = {
   closed: { 
@@ -32,7 +34,7 @@ const ChatHeader = ({ onClose }: ChatPanelProps) => {
   return (
     <div className="flex w-full justify-between items-center text-default border border-accent rounded-t-lg py-3 px-4">
       <div className="flex gap-3 items-center">
-          <div className="relative w-12 h-12">
+          <div className="relative w-8 h-8 md:w-10 md:h-10">
             <Image 
               src="/img/profile-octavio.jpg" 
               alt='Image of John Roland Octavio' 
@@ -41,7 +43,7 @@ const ChatHeader = ({ onClose }: ChatPanelProps) => {
             />
           </div>
           <div className="flex flex-col">
-            <p className='text-sm'>John Octavio</p>
+            <p className='text-sm font-medium'>John Octavio</p>
             <p className='inline-flex items-center gap-2 text-[12px]'><span className="w-1.5 h-1.5 bg-green rounded-full"></span>Active Now</p>
           </div>
       </div>
@@ -61,6 +63,10 @@ export const ChatPanel = ({ open, onClose }: ChatPanelProps) => {
       variants={ chatPanelVariants }
     >
       <ChatHeader onClose={ onClose }/>
+      <div className="flex flex-col gap-4 px-4 py-4">
+        <ChatMessage sender="John O." message="Ask me anything about myself and my projects!" />
+        <ChatMessage sender="me" message="sample" />
+      </div>
     </motion.div>
   )
 }

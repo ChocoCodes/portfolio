@@ -17,11 +17,11 @@ export const ChatBubble = () => {
     const toggleChat = () => setIsOpen(!isOpen);
     
     return (
-        <div className="fixed bottom-4 right-10 flex gap-3 flex-col">
+        <div className="fixed bottom-6 right-6 md:right-10 flex gap-3 flex-col z-50">
             <ChatPanel open={ isOpen } onClose={ toggleChat } />
             <div className='self-end'>
                 <button 
-                    className="inline-flex gap-2 items-center hover:cursor-pointer bg-accent hover:bg-accent/90 text-default font-manrope font-medium px-6 py-3 rounded-full"
+                    className="inline-flex gap-2 items-center hover:cursor-pointer bg-accent hover:bg-accent/90 text-default font-manrope font-medium p-3 md:px-6 md:py-3 rounded-full"
                     onClick={ toggleChat }
                 >
                     <motion.div
@@ -36,7 +36,7 @@ export const ChatBubble = () => {
                     >
                         <IoChatbubbleEllipses className="text-2xl"/>
                     </motion.div>
-                    Chat with John
+                    <p className='hidden md:flex'>Chat with John</p>
                 </button>
             </div>
         </div> 

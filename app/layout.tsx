@@ -1,5 +1,5 @@
 import { Header, Footer } from '@/components/_components';
-import { ChatBubble } from './chat/chat-bubble';
+import { ChatBubble } from '@/components/chat/chat-bubble';
 
 import localFont from 'next/font/local';
 import "./globals.css";
