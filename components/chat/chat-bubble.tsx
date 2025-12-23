@@ -17,7 +17,7 @@ export const ChatBubble = () => {
     const toggleChat = () => setIsOpen(!isOpen);
     
     return (
-        <div className="fixed bottom-6 right-6 md:right-10 flex gap-3 flex-col z-50">
+        <div className="fixed bottom-8 right-6 md:right-10 flex gap-3 flex-col z-50">
             <ChatPanel open={ isOpen } onClose={ toggleChat } />
             <div className='self-end'>
                 <button 

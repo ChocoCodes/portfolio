@@ -65,7 +65,7 @@ export const ChatPanel = ({ open, onClose }: ChatPanelProps) => {
       <ChatHeader onClose={ onClose }/>
       <div className="flex flex-col gap-4 px-4 py-4">
         <ChatMessage sender="John O." message="Ask me anything about myself and my projects!" />
-        <ChatMessage sender="me" message="sample" />
+        <ChatMessage sender="me" message="Coming Soon!" />
       </div>
     </motion.div>
   )

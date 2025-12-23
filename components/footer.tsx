@@ -11,11 +11,11 @@ export const Footer = () => {
             animate="open"
             transition={{ delay: 0.5, duration: 0.3, ease: "easeInOut" }}
         >
-            <p>Built using <span className="font-semibold">Next.js</span>, <span className="font-semibold">TypeScript</span>, and <span className="font-semibold">Tailwind</span>.</p>
+            <p>Built using <span className="font-medium">Next.js</span>, <span className="font-medium">TypeScript</span>, and <span className="font-medium">Tailwind</span>.</p>
             <div className="flex gap-2">
                 <p>&copy;</p>
                 <p>{ new Date().getFullYear() }</p>
-                <p>John Octavio.</p>
+                <p>John Octavio. All rights reserved.</p>
             </div>
         </motion.footer>
     )

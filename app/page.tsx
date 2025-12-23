@@ -8,7 +8,7 @@ export const metadata = {
   title: "Home",
   description: "Home Page of John Octavio's Personal Portfolio",
   openGraph: {
-    title: "John Roland Octavio",
+    title: "John Roland Octavio's Portfolio",
     description: "CS Student, Chief Technology Officer, Software Developer",
     url: "https://johnrlnd.dev",
     type: "website",
