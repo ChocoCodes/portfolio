@@ -12,7 +12,7 @@ export const CopyButton = ({ value }: CopyButtonProps) => {
     const [copied, setCopied] = useState(false);
 
     const handleCopy = async () => {
-        if (!value) return;
+        if (!value || copied) return;
         await navigator.clipboard.writeText(value);
         setCopied(true);
         setTimeout(() => setCopied(false), 3000);
@@ -25,7 +25,7 @@ export const CopyButton = ({ value }: CopyButtonProps) => {
             </button>
             <span 
                 className="
-                    absolute left-1/2 -translate-x-1/2 
+                    absolute left-1/2 -translate-x-1/2 hidden md:block
                     -bottom-6 px-2 py-1 text-xs rounded bg-surface text-default opacity-0
                     group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap
                 "

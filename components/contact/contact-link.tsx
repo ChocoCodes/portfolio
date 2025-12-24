@@ -17,7 +17,7 @@ interface ContactLinkProps {
 
 export const ContactLink = ({ name, link, icon, borderedIcons = true, contact, extendedClass, iconSize }: ContactLinkProps) => {
     return (
-        <div className="flex flex-col gap-2 items-center text-center">
+        <div className="flex md:flex-col gap-2 items-center text-center">
             <SocialIcon 
                 name={ name } 
                 link={ link } 
@@ -38,7 +38,7 @@ export const ContactLinks = () => {
     return (
         <StaggerWrapper 
             delay={ 0.4 }
-            className="flex flex-col md:flex-row gap-8 md:gap-14 justify-center w-full"
+            className="flex flex-col md:flex-row gap-10 md:gap-14 items-start md:justify-center mx-auto"
         >
             {SOCIALS.map((social, i) => (
                 <ContactLink 

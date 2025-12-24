@@ -1,6 +1,5 @@
 "use client";
 
-// import { useState } from 'react';
 import { motion, Variants } from 'motion/react';
 import Image from 'next/image';
 import { FiMinimize2 } from "react-icons/fi";
@@ -32,7 +31,7 @@ interface ChatPanelProps {
 
 const ChatHeader = ({ onClose }: ChatPanelProps) => {
   return (
-    <div className="flex w-full justify-between items-center text-default border border-accent rounded-t-lg py-3 px-4">
+    <div className="flex w-full justify-between items-center text-default border border-accent rounded-t-lg py-3 px-4 pointer-events-auto">
       <div className="flex gap-3 items-center">
           <div className="relative w-8 h-8 md:w-10 md:h-10">
             <Image 
@@ -57,7 +56,7 @@ const ChatHeader = ({ onClose }: ChatPanelProps) => {
 export const ChatPanel = ({ open, onClose }: ChatPanelProps) => {
   return (
     <motion.div
-      className='w-84 h-130 border border-accent rounded-lg bg-surface font-sora'
+      className={`w-84 h-130 border border-accent rounded-lg bg-surface font-sora ${ open ? 'pointer-events-auto' : 'pointer-events-none'}`}
       initial="closed"
       animate={ open ? "open" : "closed" }
       variants={ chatPanelVariants }

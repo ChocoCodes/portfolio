@@ -4,6 +4,7 @@ import { isInDateRange } from '@/utils/utils';
 import localFont from 'next/font/local';
 import "./globals.css";
 import { SnowfallWrapper } from '@/components/_components';
+import { Analytics } from '@vercel/analytics/next';
 
 const sora = localFont({
   src: '../public/fonts/Sora-VariableFont_wght.ttf',
@@ -40,13 +41,14 @@ export default function RootLayout({
       <body
         className={`${ sora.variable } ${ manrope.variable } antialiased`}
       >
-      <main className="relative bg-background flex flex-col w-full gap-6 min-h-screen items-center">
+      <main className="relative bg-background flex flex-col w-full gap-6 min-h-screen items-center z-20">
           { showSnow && <SnowfallWrapper /> } 
           <Header />
           { children }
           <Footer />
       </main>
       <ChatBubble />
+      <Analytics />
       </body>
     </html>
   );

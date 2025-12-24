@@ -17,11 +17,11 @@ export const ChatBubble = () => {
     const toggleChat = () => setIsOpen(!isOpen);
     
     return (
-        <div className="fixed bottom-8 right-6 md:right-10 flex gap-3 flex-col z-50">
+        <div className="fixed bottom-8 right-6 md:right-10 flex gap-3 flex-col z-50 pointer-events-none">
             <ChatPanel open={ isOpen } onClose={ toggleChat } />
             <div className='self-end'>
                 <button 
-                    className="inline-flex gap-2 items-center hover:cursor-pointer bg-accent hover:bg-accent/90 text-default font-manrope font-medium p-3 md:px-6 md:py-3 rounded-full"
+                    className="pointer-events-auto inline-flex gap-2 items-center hover:cursor-pointer bg-accent hover:bg-accent/90 text-default font-manrope font-medium p-3 md:px-6 md:py-3 rounded-full"
                     onClick={ toggleChat }
                 >
                     <motion.div
