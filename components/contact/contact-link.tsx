@@ -38,7 +38,7 @@ export const ContactLinks = () => {
     return (
         <StaggerWrapper 
             delay={ 0.4 }
-            className="flex flex-col md:flex-row gap-10 md:gap-14 items-start md:justify-center mx-auto"
+            className="flex flex-col md:flex-row gap-6 md:gap-14 items-start md:justify-center mx-auto"
         >
             {SOCIALS.map((social, i) => (
                 <ContactLink 

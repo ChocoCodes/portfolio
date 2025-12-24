@@ -32,7 +32,7 @@ export const ChatMessage = ({ sender, message }: ChatMessageProps) => {
             )}
             <div 
                 className={clsx(
-                    'max-w-4/5 rounded-sm p-2 text-surface flex flex-col gap-1',
+                    'max-w-4/5 rounded-sm p-3 text-surface flex flex-col gap-1',
                     { 
                         'bg-accent': sender === "John O.",
                         'bg-green': sender !== "John O."
