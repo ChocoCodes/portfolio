@@ -26,7 +26,12 @@ export const metadata = {
     default: "John Octavio",
     template: "%s | John Octavio"
   },
-  description: "Portfolio website of John Roland Octavio."
+  description: "Portfolio website of John Roland Octavio.",
+  icons: [
+    { url: '/logo.ico' },
+    { url: '/logo-32x32.png', sizes: '32x32', type: 'image/png' },
+    { url: '/logo-16x16.png', sizes: '16x16', type: 'image/png' },
+  ]
 };
 
 const showSnow = isInDateRange("2025-12-01T00:00:00Z", "2026-01-15T23:59:59Z");
@@ -41,7 +46,7 @@ export default function RootLayout({
       <body
         className={`${ sora.variable } ${ manrope.variable } antialiased`}
       >
-      <main className="relative bg-background flex flex-col w-full gap-6 min-h-screen items-center z-20">
+      <main className="relative bg-background flex flex-col w-full gap-6 min-h-screen items-center">
           { showSnow && <SnowfallWrapper /> } 
           <Header />
           { children }
