@@ -8,7 +8,7 @@ const ProjectsGallery = () => {
     return (
         <StaggerWrapper 
             delay={ 0.3 }
-            className="flex flex-col md:flex-row md:flex-wrap w-4/5 md:w-3/5 gap-4"
+            className="flex flex-col md:flex-row md:flex-wrap w-4/5 lg:w-3/5 gap-4 mx-auto"
         >
             { PROJECTS.map((project, i) => (
                 <ProjectCard key={ i } { ...project } />
@@ -22,7 +22,7 @@ export const ProjectsSection = () => {
         <>
             <StaggerWrapper
                 delay={ 0.1 }
-                className="w-4/5 md:w-3/5 text-start text-xl md:text-3xl font-semibold font-sora text-default"
+                className="w-4/5 lg:w-3/5 text-start text-xl md:text-3xl font-semibold font-sora text-default"
             >
                 <p>Featured Projects</p>
             </StaggerWrapper>

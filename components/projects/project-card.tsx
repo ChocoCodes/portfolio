@@ -38,7 +38,7 @@ export const ProjectCard = ({
     
     return (
         <div 
-            className="group relative w-full md:w-[49%] aspect-video text-default rounded-lg overflow-hidden border border-default/25 hover:cursor-pointer"
+            className="group relative w-full md:w-[48%] aspect-video text-default rounded-lg overflow-hidden border border-default/25 hover:cursor-pointer"
             onClick={ e => handleMobileTap(e) }
         >
             <Image 

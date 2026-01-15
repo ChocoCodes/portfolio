@@ -67,7 +67,7 @@ const TimeDisplay = () => {
     }, [])
 
     return (
-        <div className="flex gap-1 md:gap-2 items-center justify-center text-[8px] md:text-lg">
+        <div className="flex gap-1 md:gap-2 items-center justify-center text-[8px] md:text-base lg:text-lg">
             <FaUserClock />
             <p>{ time } (PHT)</p>
         </div>
@@ -86,7 +86,7 @@ export const Header = () => {
                 initial="closed"
                 animate="open"
             >
-                <Link href="/" className='text-xs md:text-lg'>John Octavio.</Link>
+                <Link href="/" className='text-xs md:text-base lg:text-lg'>John Octavio.</Link>
                 <NavBar 
                     navClass='hidden md:flex' 
                     listClass='flex gap-8' 
