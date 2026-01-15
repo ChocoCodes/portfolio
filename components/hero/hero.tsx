@@ -10,11 +10,11 @@ import { StaggerWrapper } from "../stagger-wrapper";
 export const Hero = () => {
     return (
         <StaggerWrapper delay={ 0.2 }
-            className="flex flex-col justify-start w-4/5 md:w-3/5 border gap-2 md:gap-4 border-accent rounded-lg mx-auto p-4 md:py-6 md:px-8"
+            className="flex flex-col justify-start w-4/5 lg:w-3/5 border gap-2 md:gap-4 border-accent rounded-lg mx-auto p-4 md:py-6 md:px-8"
         >
             <div className="flex justify-between items-center">
                 <div className="flex gap-2 md:gap-4 items-center">
-                    <p className='font-sora font-medium text-[12px] md:text-3xl text-default'>John Roland Octavio</p>
+                    <p className='font-sora font-medium text-[12px] md:text-2xl lg:text-3xl text-default'>John Roland Octavio</p>
                     <div className="flex items-center gap-1 md:gap-2 text-[6px] md:text-sm text-secondary font-manrope">
                         <div className="w-1 md:w-2 h-1 md:h-2 rounded-full bg-green"></div>
                         <p>Available</p>

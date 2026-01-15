@@ -7,7 +7,7 @@ import { StaggerWrapper } from '../stagger-wrapper';
 export const TechStackSection = () => {
     return (
         <StaggerWrapper delay={ 0.4 }
-            className="w-4/5 md:w-3/5 flex flex-col mx-auto text-default gap-4 md:gap-6 border-2 border-accent p-4 md:p-6 rounded-lg"
+            className="w-4/5 lg:w-3/5 flex flex-col mx-auto text-default gap-4 md:gap-6 border-2 border-accent p-4 md:p-6 rounded-lg"
         >
             <p className="font-sora font-semibold text-lg md:text-3xl">What I work with</p>
             <div className="flex flex-wrap gap-2 md:gap-4 w-full">

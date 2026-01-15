@@ -7,7 +7,7 @@ import { StaggerWrapper } from '../stagger-wrapper';
 export const FeatureSection = () => {
     return (
         <StaggerWrapper delay={ 0.3 }
-            className="flex w-4/5 md:w-3/5 md:h-[260px] gap-6 mx-auto"
+            className="flex w-4/5 lg:w-3/5 lg:h-[260px] gap-6 mx-auto"
         >
             <Features />
             <div className='relative hidden md:block md:w-2/5 border-2 border-accent rounded-lg'>
