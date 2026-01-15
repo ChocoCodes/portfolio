@@ -55,12 +55,12 @@ export const TabContent = ({ currentTab }: TabContentProps) => {
     return (
         <ul className='w-full flex flex-col gap-4 md:gap-6 font-sora text-default h-40 md:h-[245px]'>
             {items.map((item, i) => (
-                <li key={ i } className="flex flex-col md:gap-1">
+                <li key={ i } className="flex flex-col lg:gap-1">
                     <div className="flex justify-between items-center">
-                        <p className='text-xs md:text-2xl font-medium max-w-3/5'>{ item.title }</p>
-                        <p className='text-[10px] md:text-base'>{ item.duration }</p>
+                        <p className='text-xs md:text-lg lg:text-2xl font-medium max-w-3/5'>{ item.title }</p>
+                        <p className='text-[10px] md:text-sm'>{ item.duration }</p>
                     </div>
-                    <p className='text-[10px] md:text-lg text-secondary max-w-1/2'>{ item.name }</p>
+                    <p className='text-[10px] md:text-base lg:text-lg text-secondary max-w-1/2'>{ item.name }</p>
                 </li>
             ))}
         </ul>

@@ -21,8 +21,11 @@ const MarqueeItem = ({ items, isHidden = false, speed, direction }: MarqueeItemP
         >
             {items.map((item, i) => (
                 <li key={ i }>
-                    <div className="relative aspect-video h-50">
-                        <Image src={ item.path } alt={ item.title } fill className="object-cover"/>
+                    <div className="flex flex-col gap-1">
+                        <div className="relative aspect-video h-50 flex flex-col">
+                            <Image src={ item.path } alt={ item.title } fill className="object-cover"/>
+                        </div>
+                        <p className='text-base text-secondary'>{item.title}</p>
                     </div>
                 </li>
             ))}
