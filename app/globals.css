@@ -38,3 +38,12 @@
 .marquee-container:hover .animate-marquee {
   animation-play-state: paused;
 }
+
+@keyframes placeholderFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-placeholder::placeholder {
+  animation: placeholderFade 0.5s ease-in-out;
+}
