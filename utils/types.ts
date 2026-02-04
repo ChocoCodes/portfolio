@@ -31,3 +31,9 @@ export type Certificate = {
     title: string;
     path: string;
 }
+
+export interface Message {
+    id: string;
+    sender: "John O." | "me";
+    message: string;
+}
