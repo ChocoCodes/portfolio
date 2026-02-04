@@ -1,12 +1,13 @@
+import { UIMessage } from '@ai-sdk/react';
 import clsx from 'clsx';
 import Image from 'next/image';
 
 interface ChatMessageProps {
     sender: "John O." | "me";
-    message: string;
+    messages: UIMessage;
 }
 
-export const ChatMessage = ({ sender, message }: ChatMessageProps) => {
+export const ChatMessage = ({ sender, messages }: ChatMessageProps) => {
     return (
         <div 
             className={clsx(
@@ -39,7 +40,14 @@ export const ChatMessage = ({ sender, message }: ChatMessageProps) => {
                     }
                 )}
             >
-                <p className='text-xs'>{ message }</p>
+                {messages.parts.map((part, index) => {
+                    switch(part.type) {
+                        case 'text':
+                            return <p key={index} className='text-xs'>{part.text}</p>
+                        default:
+                            return null;
+                    }
+                })}
             </div>
         </div>
     );

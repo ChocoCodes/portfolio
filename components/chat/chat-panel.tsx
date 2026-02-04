@@ -1,10 +1,12 @@
 "use client";
 
+import { useEffect, useRef } from 'react';
+import { UIMessage } from 'ai';
+import { useChat } from '@ai-sdk/react';
 import { motion, Variants } from 'motion/react';
 import Image from 'next/image';
 import { FiMinimize2 } from "react-icons/fi";
-import { ChatMessage } from './chat-message';
-import { ChatInput } from './chat-input';
+import { ChatMessage, ChatInput } from '@/components/chat/_components';
 
 const chatPanelVariants = {
   closed: { 
@@ -55,6 +57,49 @@ const ChatHeader = ({ onClose }: ChatPanelProps) => {
 }
 
 export const ChatPanel = ({ open, onClose }: ChatPanelProps) => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const { messages, sendMessage, status } = useChat<UIMessage>({
+    onError: err => {
+      console.error(`Chat error: ${ err.message }`);
+    },
+    messages: [
+      {
+        id: 'welcome',
+        role: 'assistant',
+        parts: [{
+          type: 'text',
+          text: '안녕하세요! Ask me anything about myself and my projects!'
+        }],
+      }
+    ]
+  });
+
+  const handleSubmit = async (query: string) => {
+    if (!query.trim()) return;
+    await sendMessage({ text: query });
+  }
+
+  const atBottom = () => {
+    if (!scrollContainerRef.current) return false;
+    
+    const { scrollHeight, scrollTop, clientHeight } = scrollContainerRef.current;
+
+    return scrollHeight - scrollTop <= clientHeight + 100;
+  }
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    const last = messages[messages.length - 1];
+    if (last || atBottom()) {
+      container.scrollTo({
+        top: container.scrollHeight,
+        behavior: 'smooth'
+      });
+    }
+  }, [messages])
+
   return (
     <motion.div
       className={`relative flex flex-col w-84 h-130 border border-accent rounded-lg overflow-hidden bg-surface font-sora ${ open ? 'pointer-events-auto' : 'pointer-events-none'}`}
@@ -63,10 +108,15 @@ export const ChatPanel = ({ open, onClose }: ChatPanelProps) => {
       variants={ chatPanelVariants }
     >
       <ChatHeader onClose={ onClose }/>
-      <div className="flex flex-col flex-1 gap-4 p-4 overflow-y-auto scrollbar-none">
-        <ChatMessage sender="John O." message="Ask me anything about myself and my projects!" />
+      <div 
+        ref={ scrollContainerRef }
+        className="flex flex-col flex-1 gap-4 p-4 overflow-y-auto scrollbar-none" 
+      >
+        { messages.map(message => (
+          <ChatMessage key={ message.id } sender={ message.role === 'assistant' ? "John O." : "me" } messages={message} />
+        ))}
       </div>
-      <ChatInput onSend={ () => {} } />
+      <ChatInput onSend={ handleSubmit } />
     </motion.div>
   )
 }

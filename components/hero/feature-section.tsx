@@ -11,7 +11,7 @@ export const FeatureSection = () => {
         >
             <Features />
             <div className='relative hidden md:block md:w-2/5 border-2 border-accent rounded-lg'>
-            <Image src='/img/profile-octavio.jpg' alt="Image of John Octavio" fill className='object-cover rounded-lg'/>
+                <Image src='/img/projects/eSkolar-login.png' alt="eSkolar" fill className='object-cover rounded-lg'/>
             </div>
         </StaggerWrapper>
     )

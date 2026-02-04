@@ -78,10 +78,10 @@ export const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     return (
         <header 
-            className="flex flex-col md:flex-row w-full bg-background text-default font-sora p-6 md:px-8 lg:px-14"
+            className="flex flex-col md:flex-row w-full bg-background text-default font-sora"
         >
             <motion.div 
-                className="flex w-full lg:w-3/5 justify-between items-center mx-auto" 
+                className="flex w-full lg:w-3/5 justify-between items-center mx-auto border-b border-default/20 p-6 lg:py-4" 
                 variants={ containerVariants }
                 initial="closed"
                 animate="open"

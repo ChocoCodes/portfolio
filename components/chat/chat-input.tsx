@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { IoIosSend } from "react-icons/io";
 
 interface ChatInputProps {
-    onSend: () => void;
+    onSend: (message: string) => void;
 }
 
 const PLACEHOLDERS = [
@@ -18,7 +18,6 @@ const N_SECS = 3;
 
 export const ChatInput = ({ onSend }: ChatInputProps ) => {
     const [query, setQuery] = useState("");
-    const [length, setLength] = useState<number>(0);
     const [placeholder, setPlaceholder] = useState(PLACEHOLDERS[0]);
 
     useEffect(() => {
@@ -32,25 +31,22 @@ export const ChatInput = ({ onSend }: ChatInputProps ) => {
         return () => clearInterval(interval);
     }, [N_SECS]);
 
+    const handleSend = () => {
+        if (query.trim().length == 0) return;
+        onSend(query);
+        setQuery("");
+    }
+
     // Manage Tab autocomplete and manual send (Enter)
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Tab' && query.length == 0) {
             e.preventDefault();
             setQuery(placeholder);
-            setLength(placeholder.length);
         }
         
         if (e.key === 'Enter' && query.length > 0) {
-            onSend();
-            setQuery("");
-            setLength(0);
+            handleSend();
         }
-    }
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const q = e.target.value
-        setQuery(q);
-        setLength(q.length);
     }
 
     return (
@@ -62,14 +58,14 @@ export const ChatInput = ({ onSend }: ChatInputProps ) => {
                     id="query"  
                     value={ query || "" }
                     maxLength={ MAX_CHAR }
-                    onChange={ handleChange }
+                    onChange={ e => setQuery(e.target.value) }
                     onKeyDown={ handleKeyDown }
                     className='w-full placeholder-secondary text-default border-secondary/40 border-b p-1 focus:border-secondary focus:outline-none text-sm'
                     placeholder={ placeholder }
                 />
                 <button 
                     className='bg-accent p-2 text-xl rounded-lg hover:bg-accent/85 hover:cursor-pointer'
-                    onClick={ onSend }
+                    onClick={ handleSend }
                 >
                     <IoIosSend />
                 </button>
@@ -83,7 +79,7 @@ export const ChatInput = ({ onSend }: ChatInputProps ) => {
                         "Ask and you shall receive."
                     }
                 </p>
-                <p>{ length } / { MAX_CHAR }</p>
+                <p>{ query.length } / { MAX_CHAR }</p>
             </div>
         </div>
     )
