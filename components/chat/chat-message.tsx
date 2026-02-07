@@ -1,13 +1,16 @@
 import { UIMessage } from '@ai-sdk/react';
 import clsx from 'clsx';
 import Image from 'next/image';
+import ReactMarkdown from 'react-markdown';
+import { TypingIndicator } from './typing-indicator';
 
 interface ChatMessageProps {
     sender: "John O." | "me";
     messages: UIMessage;
+    isTyping?: boolean;
 }
 
-export const ChatMessage = ({ sender, messages }: ChatMessageProps) => {
+export const ChatMessage = ({ sender, messages, isTyping }: ChatMessageProps) => {
     return (
         <div 
             className={clsx(
@@ -40,14 +43,25 @@ export const ChatMessage = ({ sender, messages }: ChatMessageProps) => {
                     }
                 )}
             >
-                {messages.parts.map((part, index) => {
-                    switch(part.type) {
-                        case 'text':
-                            return <p key={index} className='text-xs'>{part.text}</p>
-                        default:
-                            return null;
-                    }
-                })}
+                {isTyping ? <TypingIndicator /> : (
+                    messages.parts.map((part, index) => {
+                        switch(part.type) {
+                            case 'text':
+                                return (
+                                    <div 
+                                        key={ index }
+                                        className='text-sm prose prose-sm max-w-none'
+                                    >
+                                        <ReactMarkdown>
+                                            { part.text }
+                                        </ReactMarkdown>
+                                    </div>
+                                )
+                            default:
+                                return null;
+                        }
+                }))
+                }
             </div>
         </div>
     );

@@ -1,4 +1,4 @@
-import { cosineDistance, desc, gt, sql } from "drizzle-orm";
+import { cosineDistance, desc, sql } from "drizzle-orm";
 import { db } from "./config";
 import { documents } from "./schema";
 import { generateEmbedding } from "../rag/embedding";

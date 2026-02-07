@@ -2,24 +2,28 @@
 
 import { useState, useEffect } from 'react';
 import { IoIosSend } from "react-icons/io";
+import { ChatStatus } from 'ai';
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 interface ChatInputProps {
     onSend: (message: string) => void;
+    status: ChatStatus;
 }
 
 const PLACEHOLDERS = [
     "Are you open to work?",
-    "Where are you based?",
+    "Tell me about your projects",
     "What are your tech stacks?"
 ];
 
 const MAX_CHAR = 500;
-const N_SECS = 3;
+const N_SECS = 5;
 
-export const ChatInput = ({ onSend }: ChatInputProps ) => {
+export const ChatInput = ({ onSend, status }: ChatInputProps ) => {
     const [query, setQuery] = useState("");
     const [placeholder, setPlaceholder] = useState(PLACEHOLDERS[0]);
 
+    // Displaying autofill questions in placeholders
     useEffect(() => {
         const interval = setInterval(() => {
             setPlaceholder(prev => {
@@ -29,12 +33,16 @@ export const ChatInput = ({ onSend }: ChatInputProps ) => {
         }, N_SECS * 1000);
 
         return () => clearInterval(interval);
-    }, [N_SECS]);
+    }, []);
+
+    const isStreaming = status === "streaming" || status === "submitted";
 
     const handleSend = () => {
-        if (query.trim().length == 0) return;
+        if (query.trim().length == 0 || isStreaming) return;
+
         onSend(query);
         setQuery("");
+
     }
 
     // Manage Tab autocomplete and manual send (Enter)
@@ -44,7 +52,7 @@ export const ChatInput = ({ onSend }: ChatInputProps ) => {
             setQuery(placeholder);
         }
         
-        if (e.key === 'Enter' && query.length > 0) {
+        if (e.key === 'Enter' && query.length > 0 && !isStreaming) {
             handleSend();
         }
     }
@@ -64,10 +72,11 @@ export const ChatInput = ({ onSend }: ChatInputProps ) => {
                     placeholder={ placeholder }
                 />
                 <button 
-                    className='bg-accent p-2 text-xl rounded-lg hover:bg-accent/85 hover:cursor-pointer'
+                    className={`${isStreaming ? 'bg-accent/85' : ''} w-12 h-10 bg-accent text-xl p-2 rounded-lg hover:bg-accent/85 hover:cursor-pointer flex items-center justify-center`}
                     onClick={ handleSend }
+                    disabled={ isStreaming }
                 >
-                    <IoIosSend />
+                    { isStreaming ? <AiOutlineLoading3Quarters className='animate-spin' /> : <IoIosSend /> }
                 </button>
             </div>
             <div className="flex justify-between text-xs text-secondary items-center">

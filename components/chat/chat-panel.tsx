@@ -100,6 +100,8 @@ export const ChatPanel = ({ open, onClose }: ChatPanelProps) => {
     }
   }, [messages])
 
+  const isStreaming = status === "streaming" || status === "submitted";
+
   return (
     <motion.div
       className={`relative flex flex-col w-84 h-130 border border-accent rounded-lg overflow-hidden bg-surface font-sora ${ open ? 'pointer-events-auto' : 'pointer-events-none'}`}
@@ -112,11 +114,28 @@ export const ChatPanel = ({ open, onClose }: ChatPanelProps) => {
         ref={ scrollContainerRef }
         className="flex flex-col flex-1 gap-4 p-4 overflow-y-auto scrollbar-none" 
       >
-        { messages.map(message => (
-          <ChatMessage key={ message.id } sender={ message.role === 'assistant' ? "John O." : "me" } messages={message} />
-        ))}
+        {messages.map(message => {
+          const hasContent = message.parts.some(part => 
+            part.type === 'text' && part.text && part.text.trim().length > 0
+          );
+    
+          if (!hasContent && message.role === 'assistant') {
+            return null;
+          }
+
+          return <ChatMessage key={ message.id } sender={ message.role === 'assistant' ? "John O." : "me" } messages={ message } />
+        })}
+
+        {isStreaming && (
+          <ChatMessage 
+            sender="John O."
+            messages={ {} as UIMessage }
+            isTyping={ true } 
+          />
+        )}
+
       </div>
-      <ChatInput onSend={ handleSubmit } />
+      <ChatInput onSend={ handleSubmit } status={ status }/>
     </motion.div>
   )
 }

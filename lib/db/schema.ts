@@ -3,7 +3,7 @@ import { pgTable, serial, text, vector, jsonb, index } from 'drizzle-orm/pg-core
 export const documents = pgTable("documents", {
     id: serial("id").primaryKey(),
     content: text("content").notNull(),
-    embedding: vector("embedding", { dimensions: 1536 }), // Google "text-embedding-004" model dimensions = 768. "gemini-embedding-001" = 3072
+    embedding: vector("embedding", { dimensions: 1536 }),
     metadata: jsonb("metadata").$type<{
         source: string;
         headers: string[];
