@@ -81,7 +81,7 @@ export const Header = () => {
             className="flex flex-col md:flex-row w-full bg-background text-default font-sora"
         >
             <motion.div 
-                className="flex w-full lg:w-3/5 justify-between items-center mx-auto border-b border-default/20 p-6 lg:py-4" 
+                className="flex w-full lg:w-3/5 justify-between items-center mx-auto border-b border-default/20 p-6 lg:py-4 lg:px-2" 
                 variants={ containerVariants }
                 initial="closed"
                 animate="open"

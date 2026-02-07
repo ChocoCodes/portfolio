@@ -11,7 +11,7 @@ export const Footer = () => {
             animate="open"
             transition={{ delay: 0.5, duration: 0.3, ease: "easeInOut" }}
         >
-            <div className="flex gap-2">
+            <div className="flex flex-col lg:flex-row items-center md:gap-1">
                 <p> Built using <span className="font-medium text-default">Next.js</span>, <span className="font-medium text-default">TypeScript</span>, and <span className="font-medium text-default">Tailwind</span>.</p>
                 <p>
                     <span>&copy; { new Date().getFullYear() }</span> John Octavio, all rights reserved.
