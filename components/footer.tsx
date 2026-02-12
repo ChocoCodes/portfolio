@@ -6,7 +6,7 @@ export const Footer = () => {
     return (
         <motion.footer 
             variants={ childVariant }
-            className="w-4/5 md:w-3/5 text-secondary font-sora py-5 mx-auto mt-auto flex flex-col items-center justify-center text-[10px] md:text-base font-normal border-t border-default/50"
+            className="w-full md:w-3/5 text-secondary font-sora py-5 mx-auto mt-auto flex flex-col items-center justify-center text-[10px] md:text-base font-normal border-t border-default/50"
             initial="closed"
             animate="open"
             transition={{ delay: 0.5, duration: 0.3, ease: "easeInOut" }}

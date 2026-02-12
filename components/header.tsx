@@ -81,7 +81,7 @@ export const Header = () => {
             className="flex flex-col md:flex-row w-full bg-background text-default font-sora"
         >
             <motion.div 
-                className="flex w-full lg:w-3/5 justify-between items-center mx-auto border-b border-default/20 p-6 lg:py-4 lg:px-2" 
+                className="flex w-full lg:w-3/5 justify-between items-center mx-auto border-b border-default/20 px-6 py-4 lg:px-2" 
                 variants={ containerVariants }
                 initial="closed"
                 animate="open"
@@ -100,6 +100,7 @@ export const Header = () => {
                     </button>
                 </div>
             </motion.div>
+            {/* Mobile Navbar */}
             <motion.div
                 initial={ false }
                 animate={ isMenuOpen ? "open" : "closed" }
@@ -107,7 +108,7 @@ export const Header = () => {
                 className='block md:hidden'    
             >
                 <NavBar 
-                    navClass='flex flex-col w-full' 
+                    navClass='flex flex-col w-full px-4' 
                     listClass='mt-4 flex flex-col gap-2 text-sm md:text-md'
                     initial="closed" 
                     animate={ isMenuOpen ? "open": "closed" }
