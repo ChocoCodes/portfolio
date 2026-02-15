@@ -10,8 +10,9 @@ export const FeatureSection = () => {
             className="flex w-4/5 lg:w-3/5 lg:h-[260px] gap-6 mx-auto"
         >
             <Features />
+            {/* Finalist Solution Images */}
             <div className='relative hidden md:block md:w-2/5 border-2 border-accent rounded-lg'>
-                <Image src='/img/projects/eSkolar-login.png' alt="eSkolar" fill className='object-cover rounded-lg'/>
+                <Image src='/img/projects/eSkolar-logo.png' alt="eSkolar" fill className='object-cover rounded-lg'/>
             </div>
         </StaggerWrapper>
     )
