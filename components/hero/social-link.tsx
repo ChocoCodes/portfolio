@@ -11,22 +11,24 @@ interface SocialIconProps {
     borderedIcons?: boolean;
     extendedClass: string;
     iconSize: string;
+    contact: string
 }
 
 interface SocialLinksProps {
     borderedIcons?: boolean;
 }
 
-export const SocialIcon = ({ name, link, icon: Icon, borderedIcons, extendedClass, iconSize }: SocialIconProps) => {
+export const SocialIcon = ({ name, link, contact, icon: Icon, borderedIcons, extendedClass, iconSize }: SocialIconProps) => {
     return (
         <Link 
             href={ link } 
             target={ name !== 'Email' ? "_blank" : '_self' } 
             aria-label={ name }
-            className={`${ borderedIcons ? 'border border-default/80' : '' } ${ extendedClass } text-default/80 flex justify-center items-center bg-surface rounded-sm p-1 hover:bg-default/80 hover:text-background transition-colors duration-300`}
+            className={`${ borderedIcons ? 'border border-transparent hover:text-accent hover:scale-105 rounded-full px-6 hover:border-accent transition-transform duration-300 ease-out' : '' } ${ extendedClass } flex items-center gap-2`}
             rel="noopener noreferrer"
         >
-            <Icon className={`${ iconSize } text-center`} />
+            <Icon className={`${ iconSize } text-center shrink-0`} />
+            <p className="text-default/95 font-medium">{ contact }</p>
         </Link>
     )
 }
@@ -39,7 +41,7 @@ export const SocialLinks = ({ borderedIcons = true }: SocialLinksProps) => {
                     key={ i } 
                     { ...social }
                     borderedIcons={ borderedIcons } 
-                    extendedClass='w-5 h-5 md:w-10 md:h-10' 
+                    extendedClass='min-w-5 h-5 md:min-w-10 md:h-10' 
                     iconSize='md:w-6 md:h-6'
                 />
             ))}

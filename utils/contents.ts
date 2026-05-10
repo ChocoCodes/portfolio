@@ -27,6 +27,7 @@ export const NAV_ITEMS = [
     { title: 'Home', link: '/' },
     { title: 'About', link: '/about' },
     { title: 'Projects', link: '/projects' },
+    { title: 'Certificates', link: '/certificates' },
     { title: 'Contact', link: '/contact' }
 ];
 
@@ -50,7 +51,7 @@ export const TECH_STACK: TechStack[] = [
 export const SOCIALS = [
     { name: 'Email', link: 'mailto:johnrlnd1704@gmail.com?subject=Inquiry%20From%20Porfolio', icon: IoMail, contact: 'johnrlnd1704@gmail.com' },
     { name: 'Github', link: 'https://github.com/ChocoCodes', icon: IoLogoGithub, contact: 'ChocoCodes' },
-    { name: 'LinkedIn', link: 'https://www.linkedin.com/in/johnrlnd', icon: FaLinkedinIn },
+    { name: 'LinkedIn', link: 'https://www.linkedin.com/in/johnrlnd', icon: FaLinkedinIn, contact: 'John Roland Octavio' },
     { name: 'Discord', link: 'https://discord.com/users/335627275821252608', icon: SiDiscord, contact: 'ambasingh404' }
 ];
 
@@ -93,7 +94,7 @@ export const PROJECTS: Project[] = [
         competition: 'Google APAC Solution Challenge 2025',
         imgPath: '/img/projects/bantala.png',
         tags: TECH_STACK.filter(t => (
-                ['Next.js', 'Firebase', 'TypeScript', 'Python'].includes(t.name)
+            ['Next.js', 'Firebase', 'TypeScript', 'Python'].includes(t.name)
         ))
     },
     { 
@@ -103,7 +104,7 @@ export const PROJECTS: Project[] = [
         competition: 'Google APAC Solution Challenge 2025',
         imgPath: '/img/projects/rvs-dental.png',
         tags: TECH_STACK.filter(t => (
-                ['Laravel', 'TailwindCSS', 'MySQL'].includes(t.name)
+            ['Laravel', 'TailwindCSS', 'MySQL'].includes(t.name)
         ))
     },
     { 
@@ -139,20 +140,6 @@ export const PROJECTS: Project[] = [
             "MIT App Inventor",
             "IoT"
         ] 
-    },
-    { 
-        name: 'Portfolio v0', 
-        description: 'My portfolio using native web stack and PHP.', 
-        githubLink: 'https://github.com/ChocoCodes/cbad-midterm-portfolio', 
-        demoLink: 'https://drive.google.com/file/d/1RKcgusxV9cNrQ4cSfZMmr5toLY6ZHf8J/view?usp=sharing', 
-        imgPath: '/img/projects/portfoliov0.png',
-        tags: [
-            ...TECH_STACK.filter(t => (
-                ['PHP', 'HTML5', 'JavaScript'].includes(t.name)
-            )),
-            'Bootstrap',
-            'CSS'
-        ]
     },
     {
         name: 'Scientia Aeternum',

@@ -5,20 +5,17 @@ export const ContactBanner = () => {
     return (
         <StaggerWrapper 
             delay={ 0.1 }
-            className="flex md:w-1/4 gap-4 mx-auto text-default items-center"
+            className="flex gap-4 text-default items-end"
         >
-            <div className="relative w-20 h-20">
+            <div className="relative w-12 h-12">
               <Image 
                 src="/img/profile-octavio.jpg" 
                 alt='Image of John Roland Octavio' 
                 fill
-                className='object-cover rounded-full'
+                className='object-cover rounded-md'
               />
             </div>
-            <div className="flex flex-col">
-              <p className='text-xs md:text-base font-medium'>John Roland Octavio</p>
-              <span className='inline-flex gap-2 items-center text-green'><div className="w-2 h-2 rounded-full bg-green"></div>Available</span>
-            </div>
+            <p className='text-xs md:text-2xl font-medium'>John Roland Octavio</p>
         </StaggerWrapper>
     )
 }
