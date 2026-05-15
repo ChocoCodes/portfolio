@@ -5,7 +5,8 @@ import { BiLogoFirebase } from "react-icons/bi";
 import { 
     Project, 
     Feature, 
-    TechStack 
+    TechStack, 
+    Certificate
 } from './types';
 import { 
     SiDiscord,
@@ -174,14 +175,44 @@ export const FEATURES: Feature[] = [
     }
 ]
 
-export const CERTS = [
-    { title: 'Harvard CS50x: Intro to CS', path: '/img/certificates/cs50x-2025.png' },
-    { title: 'APAC Solution Challenge 2025', path: '/img/certificates/solcha.png' },
-    { title: 'Python Data Associate', path: '/img/certificates/python-data-associate.png' },
-    { title: 'SQL Associate', path: '/img/certificates/sql-associate.png' },
-    { title: 'Scrimba: Advanced JavaScript', path: '/img/certificates/advanced-js.png' },
-    { title: 'Scrimba: Tailwind CSS', path: '/img/certificates/tailwind.png' },
-    { title: 'Scrimba: TypeScript', path: '/img/certificates/typescript.png' },
+export const CERTS: Certificate[] = [
+    { 
+        title: 'Harvard CS50x: Introduction to CS', 
+        path: '/img/certificates/cs50x-2025.png', 
+        id: 'b2d6aa5d-aed9-4535-8b9a-ef829c201d66',
+        obtainedOn: 'November 26, 2025'
+    },
+    { 
+        title: 'APAC Solution Challenge 2025', 
+        path: '/img/certificates/solcha.png', 
+        id: '2025H2S03ASC-P00083',
+        obtainedOn: 'July 10, 2025'
+    },
+    { 
+        title: 'Python Data Associate', 
+        path: '/img/certificates/python-data-associate.png',
+        obtainedOn: 'September 20, 2024' 
+    },
+    { 
+        title: 'SQL Associate', 
+        path: '/img/certificates/sql-associate.png',
+        obtainedOn: 'December 27, 2024' 
+    },
+    { 
+        title: 'Scrimba: Advanced JavaScript', 
+        path: '/img/certificates/advanced-js.png',
+        obtainedOn: 'January 27, 2025'        
+    },
+    { 
+        title: 'Scrimba: Tailwind CSS', 
+        path: '/img/certificates/tailwind.png',
+        obtainedOn: 'January 18, 2025'  
+    },
+    { 
+        title: 'Scrimba: TypeScript', 
+        path: '/img/certificates/typescript.png',
+        obtainedOn: 'January 3, 2025'  
+    },
 ]
 
 export const PROFESSIONAL_DETAILS = [

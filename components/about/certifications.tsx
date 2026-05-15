@@ -1,13 +1,20 @@
 "use client";
 
 import { StaggerWrapper } from '../stagger-wrapper';
-import { CertsMarquee } from './certs-marquee';
+import { CertificateCard } from './certificate-card';
+import { CERTS } from '@/utils/contents';
+import { Carousel } from '../carousel';
 
 export const Certifications = () => {
     return (
-        <StaggerWrapper delay={ 0.4 } className="flex flex-col gap-8">
-          <p className="text-3xl text-default font-sora font-semibold">Certifications</p>
-          <CertsMarquee />
-        </StaggerWrapper>
+        <>
+            <StaggerWrapper delay={ 0.1 } className="w-4/5 lg:w-3/5 text-center font-sora text-default">
+            <p className="text-xl md:text-4xl text-default font-sora font-semibold">Certifications</p>
+            <p className='mt-2 text-xl text-secondary font-manrope font-medium'>Certifications from platforms, programs, and trainings I have completed.</p>
+            </StaggerWrapper>
+            <StaggerWrapper delay={ 0.3 } className="w-full max-w-4/5 mx-auto">
+                <Carousel items={ CERTS } renderItem={ cert => <CertificateCard {...cert} /> }/>
+            </StaggerWrapper>
+        </>
     )
 }
