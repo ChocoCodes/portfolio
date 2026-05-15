@@ -28,9 +28,9 @@ export const SocialIcon = ({ name, link, contact, icon: Icon, borderedIcons, ext
             rel="noopener noreferrer"
         >
             <Icon className={`${ iconSize } text-center shrink-0`} />
-            (contact && (
+            {(contact && (
                 <p className="text-default/95 group-hover:text-accent font-medium">{ contact }</p>
-            ))
+            ))}
         </Link>
     )
 }
