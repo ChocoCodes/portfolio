@@ -140,20 +140,6 @@ export const PROJECTS: Project[] = [
             "IoT"
         ] 
     },
-    { 
-        name: 'Portfolio v0', 
-        description: 'My portfolio using native web stack and PHP.', 
-        githubLink: 'https://github.com/ChocoCodes/cbad-midterm-portfolio', 
-        demoLink: 'https://drive.google.com/file/d/1RKcgusxV9cNrQ4cSfZMmr5toLY6ZHf8J/view?usp=sharing', 
-        imgPath: '/img/projects/portfoliov0.png',
-        tags: [
-            ...TECH_STACK.filter(t => (
-                ['PHP', 'HTML5', 'JavaScript'].includes(t.name)
-            )),
-            'Bootstrap',
-            'CSS'
-        ]
-    },
     {
         name: 'Scientia Aeternum',
         description: 'Curated reflections and key takeaways from the STS course.',
