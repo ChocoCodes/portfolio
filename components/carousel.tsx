@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
 interface CarouselProps<T> {
@@ -9,19 +9,37 @@ interface CarouselProps<T> {
     itemsPerView?: number;
 }
 
-export const Carousel = <T,>({ items, renderItem, itemsPerView = 2}: CarouselProps<T>) => {
+const useItemsPerView = (desktop: number): number => {
+    const [itemsPerView, setItemsPerView] = useState(desktop);
+
+
+    useEffect(() => {
+        const update = () => setItemsPerView(window.innerWidth < 768 ? 1 : desktop);
+        update();
+        window.addEventListener('resize', update);
+        return () => window.removeEventListener('resize', update);
+    }, [desktop]);
+
+    return itemsPerView;
+}
+export const Carousel = <T,>({ items, renderItem, itemsPerView: desktopItems = 2}: CarouselProps<T>) => {
+    const itemsPerView = useItemsPerView(desktopItems);
     const [currentIndex, setCurrentIndex] = useState(0);
     const maxIndex = Math.max(0, items.length - itemsPerView);
 
     const next = () => setCurrentIndex(prev => Math.min(prev + 2, maxIndex));
     const prev = () => setCurrentIndex(prev => Math.max(prev - 2, 0));
 
+    useEffect(() => {
+        setCurrentIndex(0);
+    }, [itemsPerView]);
+
     return (
         <div className="relative">
             <div className="flex overflow-hidden">
-                <div className="flex w-full transition-transform duration-500" style={{ transform: `translateX(-${currentIndex * 50}%)` }}>
+                <div className="flex w-full transition-transform duration-500" style={{ transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)` }}>
                     { items.map((item, i) => (
-                        <div key={ i } className="basis-1/2 shrink-0 px-2 snap-start">
+                        <div key={ i } className="shrink-0 px-2" style={{ width: `${ 100 / itemsPerView}%`}}>
                             { renderItem(item, i) }
                         </div>
                     ))}

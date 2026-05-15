@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from 'react';
 import { ProjectCard } from './project-card';
 import { PROJECTS } from '@/utils/contents';
 import { StaggerWrapper } from '../stagger-wrapper';
