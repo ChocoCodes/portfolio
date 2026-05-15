@@ -11,7 +11,7 @@ interface SocialIconProps {
     borderedIcons?: boolean;
     extendedClass: string;
     iconSize: string;
-    contact: string
+    contact?: string
 }
 
 interface SocialLinksProps {
@@ -24,11 +24,13 @@ export const SocialIcon = ({ name, link, contact, icon: Icon, borderedIcons, ext
             href={ link } 
             target={ name !== 'Email' ? "_blank" : '_self' } 
             aria-label={ name }
-            className={`${ borderedIcons ? 'border border-transparent hover:text-accent hover:scale-105 rounded-full px-6 hover:border-accent transition-transform duration-300 ease-out' : '' } ${ extendedClass } flex items-center gap-2`}
+            className={`${ borderedIcons ? 'border border-transparent group hover:text-accent hover:scale-105 rounded-full px-6 hover:border-accent transition-transform duration-300 ease-out' : '' } ${ extendedClass } flex items-center gap-2`}
             rel="noopener noreferrer"
         >
             <Icon className={`${ iconSize } text-center shrink-0`} />
-            <p className="text-default/95 font-medium">{ contact }</p>
+            (contact && (
+                <p className="text-default/95 group-hover:text-accent font-medium">{ contact }</p>
+            ))
         </Link>
     )
 }

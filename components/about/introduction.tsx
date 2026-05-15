@@ -4,7 +4,8 @@ import { StaggerWrapper } from "../stagger-wrapper";
 
 export const Introduction = () => {
     return (
-        <section className="flex flex-col gap-4 w-full text-default text-[10px] md:text-xl leading-relaxed">
+        <section className="flex flex-col gap-6 w-full text-default text-[10px] md:text-xl leading-relaxed">
+            <p className="text-center font-semibold font-sora text-xl md:text-4xl text-default">About Me</p>
             <StaggerWrapper delay={ 0.1 }>
                 <p> I am a third-year Computer Science student working toward becoming a <span className="font-semibold text-accent">Software Engineer</span>. </p>
                 <p> During my term as <span className="font-semibold text-accent">Chief Technology Officer</span>, I supervised multiple departmental projects and initiatives, including hands-on workshops and collaborative events. I coordinated teams and helped establish partnerships to provide learning opportunities that go beyond the classroom and are directly relevant to the industry. </p>

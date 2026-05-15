@@ -27,7 +27,7 @@ export const NAV_ITEMS = [
     { title: 'Home', link: '/' },
     { title: 'About', link: '/about' },
     { title: 'Projects', link: '/projects' },
-    { title: 'Certificates', link: '/certificates' },
+    { title: 'Certificates', link: '/certificates'},
     { title: 'Contact', link: '/contact' }
 ];
 
@@ -51,7 +51,7 @@ export const TECH_STACK: TechStack[] = [
 export const SOCIALS = [
     { name: 'Email', link: 'mailto:johnrlnd1704@gmail.com?subject=Inquiry%20From%20Porfolio', icon: IoMail, contact: 'johnrlnd1704@gmail.com' },
     { name: 'Github', link: 'https://github.com/ChocoCodes', icon: IoLogoGithub, contact: 'ChocoCodes' },
-    { name: 'LinkedIn', link: 'https://www.linkedin.com/in/johnrlnd', icon: FaLinkedinIn, contact: 'John Roland Octavio' },
+    { name: 'LinkedIn', link: 'https://www.linkedin.com/in/johnrlnd', icon: FaLinkedinIn },
     { name: 'Discord', link: 'https://discord.com/users/335627275821252608', icon: SiDiscord, contact: 'ambasingh404' }
 ];
 
@@ -101,6 +101,7 @@ export const PROJECTS: Project[] = [
         name: 'RVS Dental', 
         description: 'Patient Records and Appointments Management System.',
         githubLink: 'https://github.com/ChocoCodes/rvs-dental', 
+        demoLink: 'https://drive.google.com/file/d/1Lb4phBVMrkMTJINqEg1nGVSGsVpiLCPc/view?usp=sharing',
         competition: 'Google APAC Solution Challenge 2025',
         imgPath: '/img/projects/rvs-dental.png',
         tags: TECH_STACK.filter(t => (

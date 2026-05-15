@@ -22,7 +22,7 @@ export const ExternalLink = ({ href, icon }: ExternalLinkProps) => {
             href={ href } 
             rel="noopener noreferrer"
             target="_blank"
-            className="w-8 h-8 md:w-10 md:h-10 p-1 rounded-full bg-surface flex items-center hover:border hover:border-surface justify-center text-default hover:bg-default hover:text-surface transition-colors duration-200"
+            className="rounded-full flex items-center text-surface hover:text-accent transition-colors duration-200"
         >
             <Icon className="md:text-2xl"/>
         </Link>
