@@ -19,7 +19,8 @@ import {
     SiSupabase,
     SiPython,
     SiArduino,
-    SiPhp
+    SiPhp,
+    SiLaravel
 } from "react-icons/si";
 
 export const NAV_ITEMS = [
@@ -41,7 +42,9 @@ export const TECH_STACK: TechStack[] = [
     { icon: BiLogoFirebase, name: 'Firebase', type: "databases" },
     { icon: SiPython, name: 'Python', type: "languages" },
     { icon: SiArduino, name: 'Arduino', type: "tools" },
-    { icon: SiPhp, name: 'PHP', type: "languages" }
+    { icon: SiPhp, name: 'PHP', type: "languages" },
+    { icon: SiLaravel, name: 'Laravel', type: "frameworks/libraries" },
+
 ]
 
 export const SOCIALS = [
@@ -94,6 +97,16 @@ export const PROJECTS: Project[] = [
         ))
     },
     { 
+        name: 'RVS Dental', 
+        description: 'Patient Records and Appointments Management System.',
+        githubLink: 'https://github.com/ChocoCodes/rvs-dental', 
+        competition: 'Google APAC Solution Challenge 2025',
+        imgPath: '/img/projects/rvs-dental.png',
+        tags: TECH_STACK.filter(t => (
+                ['Laravel', 'TailwindCSS', 'MySQL'].includes(t.name)
+        ))
+    },
+    { 
         name: 'Nixar POS', 
         description: 'Point of Sale (POS) system for Nixar Auto Glass & Car Tint.', 
         githubLink: 'https://github.com/ChocoCodes/nixar-pos', 
@@ -126,20 +139,6 @@ export const PROJECTS: Project[] = [
             "MIT App Inventor",
             "IoT"
         ] 
-    },
-    { 
-        name: 'Portfolio v0', 
-        description: 'My portfolio using native web stack and PHP.', 
-        githubLink: 'https://github.com/ChocoCodes/cbad-midterm-portfolio', 
-        demoLink: 'https://drive.google.com/file/d/1RKcgusxV9cNrQ4cSfZMmr5toLY6ZHf8J/view?usp=sharing', 
-        imgPath: '/img/projects/portfoliov0.png',
-        tags: [
-            ...TECH_STACK.filter(t => (
-                ['PHP', 'HTML5', 'JavaScript'].includes(t.name)
-            )),
-            'Bootstrap',
-            'CSS'
-        ]
     },
     {
         name: 'Scientia Aeternum',
