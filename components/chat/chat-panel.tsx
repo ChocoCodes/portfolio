@@ -13,12 +13,14 @@ const chatPanelVariants = {
     opacity: 0, 
     scale: 0.8,
     y: 10,
+    visibility: 'hidden' as const,
     transition: { duration: 0.2 }
   },
   open: { 
     opacity: 1, 
     scale: 1, 
     y: 0,
+    visibility: 'visible' as const,
     transition: { 
       type: "spring",
       stiffness: 300, 
@@ -104,7 +106,7 @@ export const ChatPanel = ({ open, onClose }: ChatPanelProps) => {
 
   return (
     <motion.div
-      className={`relative flex flex-col w-84 h-130 border border-accent rounded-lg overflow-hidden bg-surface font-sora ${ open ? 'pointer-events-auto' : 'pointer-events-none'}`}
+      className={`fixed bottom-0 right-24 flex flex-col w-84 h-130 border border-accent rounded-lg overflow-hidden bg-surface font-sora ${ open ? 'pointer-events-auto' : 'pointer-events-none'}`}
       initial="closed"
       animate={ open ? "open" : "closed" }
       variants={ chatPanelVariants }

@@ -2,6 +2,7 @@ import { Header, Footer } from '@/components/_components';
 import localFont from 'next/font/local';
 import "./globals.css";
 import { Analytics } from '@vercel/analytics/next';
+import { QuickLinks } from '@/components/_components';
 
 const sora = localFont({
   src: '../public/fonts/Sora-VariableFont_wght.ttf',
@@ -44,6 +45,7 @@ export default function RootLayout({
       <main className="relative bg-background flex flex-col w-full gap-6 min-h-screen infinite-dots items-center">
           <Header />
           { children }
+          <QuickLinks /> 
           <Footer />
       </main>
       <Analytics />

@@ -1,8 +1,4 @@
-import { 
-  Hero, 
-  FeatureSection, 
-  TechStackSection
-} from '@/components/hero/_components';
+import { Hero } from '@/components/hero/_components';
 
 export const metadata = {
   title: "Home",
