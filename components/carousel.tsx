@@ -51,7 +51,7 @@ export const Carousel = <T,>({ items, renderItem, itemsPerView: desktopItems = 2
                     className="absolute -left-5 top-1/2 -translate-x-1/2 -translate-y-1/2 
                         bg-default text-background rounded-full p-1 shadow-md"
                 >
-                    <HiChevronLeft size={ 24 } />
+                    <HiChevronLeft className='w-4 h-4 lg:w-6 lg:h-6' />
                 </button>
             )}
             { currentIndex < maxIndex && (
@@ -60,7 +60,7 @@ export const Carousel = <T,>({ items, renderItem, itemsPerView: desktopItems = 2
                     className="absolute -right-5 top-1/2 translate-x-1/2 -translate-y-1/2 
                         bg-default text-background rounded-full p-1 shadow-md"
                 >
-                    <HiChevronRight size={ 24 } />
+                    <HiChevronRight className='w-4 h-4 lg:w-6 lg:h-6' />
                 </button>
             )}
         </div>

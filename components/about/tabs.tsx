@@ -73,7 +73,7 @@ export const Tabs = () => {
     return (
         <StaggerWrapper delay={ 0.3 } className='flex flex-col gap-5'>
             <p className="font-sora font-semibold text-lg md:text-4xl text-center">Background</p>
-            <p className='-mt-5 text-xl text-secondary font-manrope text-center'>A look at where I've worked, learned, and grown.</p>
+            <p className='-mt-5 text-xs md:text-xl text-secondary font-manrope text-center'>A look at where I've worked, learned, and grown.</p>
             <TabHeader currentTab={ currentTab } setCurrentTab={ setCurrentTab } />
             <TabContent currentTab={ currentTab }/>
         </StaggerWrapper>

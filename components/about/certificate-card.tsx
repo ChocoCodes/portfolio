@@ -13,10 +13,10 @@ export const CertificateCard = ({ title, path, id, obtainedOn }: Certificate) =>
                 />
             </div>
             <div className="flex justify-between items-center px-1">
-                <p className='text-base md:text-xl font-medium font-sora'>{ title }</p>
-                { obtainedOn && <p className='text-secondary text-xs md:text-base'>{ obtainedOn }</p> }
+                <p className='text-[10px] md:text-xl font-medium font-sora'>{ title }</p>
+                { obtainedOn && <p className='text-secondary text-[10px] md:text-base'>{ obtainedOn }</p> }
             </div>
-            { id && <p className="italic text-secondary -mt-3 px-1">{ id }</p> }
+            { id && <p className="italic text-secondary text-[10px] md:text-base -mt-3 px-1">{ id }</p> }
         </div>
     )
 }

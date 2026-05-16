@@ -24,7 +24,7 @@ export type Feature = {
 export type TechStack = {
     icon: IconType;
     name: string;
-    type: "languages" | "tools" | "databases" | "frameworks/libraries"; 
+    type: "language" | "tool" | "database" | "framework"; 
 }
 
 export type Certificate = {

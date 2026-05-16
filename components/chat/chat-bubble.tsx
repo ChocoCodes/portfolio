@@ -19,25 +19,23 @@ export const ChatBubble = () => {
     return (
         <>
             {/*  isOpen && <ChatPanel open={ isOpen } onClose={ toggleChat } />  */}
-            <div className='self-end'>
-                <button 
-                    className="pointer-events-auto inline-flex gap-2 items-center hover:cursor-pointer text-accent font-manrope font-medium rounded-full"
-                    onClick={ toggleChat }
+            <button 
+                className="pointer-events-auto inline-flex gap-2 items-center justify-center hover:cursor-pointer text-accent font-manrope font-medium rounded-full"
+                onClick={ toggleChat }
+            >
+                <motion.div
+                initial={{ rotate: 0 }}
+                animate={{ rotate: [0, -5, 5, -5, 5, 0] }}
+                transition={{
+                    ...wiggleTransition,
+                    delay: 1.5, 
+                    repeat: Infinity, 
+                    repeatDelay: 5, 
+                }}
                 >
-                    <motion.div
-                    initial={{ rotate: 0 }}
-                    animate={{ rotate: [0, -5, 5, -5, 5, 0] }}
-                    transition={{
-                        ...wiggleTransition,
-                        delay: 1.5, 
-                        repeat: Infinity, 
-                        repeatDelay: 5, 
-                    }}
-                    >
-                        <IoChatbubbleEllipses className="w-8 h-8"/>
-                    </motion.div>
-                </button>
-            </div>
+                    <IoChatbubbleEllipses className="w-6 h-6 lg:w-8 lg:h-8"/>
+                </motion.div>
+            </button>
         </> 
     )
 }

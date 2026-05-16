@@ -11,7 +11,7 @@ export const Footer = () => {
             animate="open"
             transition={{ delay: 0.5, duration: 0.3, ease: "easeInOut" }}
         >
-            <div className="flex flex-col items-center md:gap-1">
+            <div className="flex flex-col items-center text-center md:gap-1">
                 <p className='italic'> "Veni. Vedi. Vici." Built using <span className="font-medium text-default">Next.js</span>, <span className="font-medium text-default">TypeScript</span>, and <span className="font-medium text-default">Tailwind</span>.</p>
                 <p>
                     <span>&copy; { new Date().getFullYear() }</span> John Octavio, all rights reserved.

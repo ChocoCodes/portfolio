@@ -33,19 +33,19 @@ export const NAV_ITEMS = [
 ];
 
 export const TECH_STACK: TechStack[] = [
-    { icon: SiReact, name: 'React', type: "frameworks/libraries" },
-    { icon: SiNextdotjs, name: 'Next.js', type: "frameworks/libraries" },
-    { icon: SiTypescript, name: 'TypeScript', type: "languages" },
-    { icon: SiJavascript, name: 'JavaScript', type: "languages" },
-    { icon: SiHtml5, name: 'HTML5', type: "languages" },
-    { icon: SiTailwindcss, name: 'TailwindCSS', type: "frameworks/libraries" },
-    { icon: SiMysql, name: 'MySQL', type: "databases" },
-    { icon: SiSupabase, name: 'Supabase', type: "tools" },
-    { icon: BiLogoFirebase, name: 'Firebase', type: "databases" },
-    { icon: SiPython, name: 'Python', type: "languages" },
-    { icon: SiArduino, name: 'Arduino', type: "tools" },
-    { icon: SiPhp, name: 'PHP', type: "languages" },
-    { icon: SiLaravel, name: 'Laravel', type: "frameworks/libraries" },
+    { icon: SiReact, name: 'React', type: "framework" },
+    { icon: SiNextdotjs, name: 'Next.js', type: "framework" },
+    { icon: SiTypescript, name: 'TypeScript', type: "language" },
+    { icon: SiJavascript, name: 'JavaScript', type: "language" },
+    { icon: SiHtml5, name: 'HTML5', type: "language" },
+    { icon: SiTailwindcss, name: 'Tailwind', type: "framework" },
+    { icon: SiMysql, name: 'MySQL', type: "database" },
+    { icon: SiSupabase, name: 'Supabase', type: "tool" },
+    { icon: BiLogoFirebase, name: 'Firebase', type: "database" },
+    { icon: SiPython, name: 'Python', type: "language" },
+    { icon: SiArduino, name: 'Arduino', type: "tool" },
+    { icon: SiPhp, name: 'PHP', type: "language" },
+    { icon: SiLaravel, name: 'Laravel', type: "framework" },
 
 ]
 

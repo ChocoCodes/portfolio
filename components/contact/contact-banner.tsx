@@ -15,7 +15,7 @@ export const ContactBanner = () => {
                 className='object-cover rounded-md'
               />
             </div>
-            <p className='text-xs md:text-2xl font-medium'>John Roland Octavio</p>
+            <p className='text-xs md:text-2xl font-semibold font-sora'>John Roland Octavio</p>
         </StaggerWrapper>
     )
 }

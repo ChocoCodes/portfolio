@@ -6,12 +6,10 @@ import { StackTile } from './stack-tile';
 
 export const TechStackSection = () => {
     return (
-        <StaggerWrapper delay={ 0.4 }
-            className="w-full flex flex-col mx-auto text-default text-center gap-8"
-        >
+        <StaggerWrapper delay={ 0.4 } className="w-full flex flex-col mx-auto text-default text-center gap-8">
             <p className="font-sora font-semibold text-lg md:text-4xl">What I Work With</p>
-            <p className='-mt-6 text-xl text-secondary font-manrope'>My go-to stack for developing personal, academic, and experimental projects.</p>
-            <div className="grid grid-cols-5 gap-6">
+            <p className='-mt-6 text-xs md:text-xl text-secondary font-manrope'>My go-to stack for developing personal, academic, and experimental projects.</p>
+            <div className="grid grid-cols-3 lg:grid-cols-5 gap-3 lg:gap-6 w-full">
                 { TECH_STACK.sort((a, b) => a.type.localeCompare(b.type)).map((stack, i) => (
                     <StackTile key={i} {...stack} />
                 ))}
