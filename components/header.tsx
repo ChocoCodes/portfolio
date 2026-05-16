@@ -1,10 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { RxHamburgerMenu } from "react-icons/rx";
 import { motion } from 'motion/react';
-import { FaUserClock } from "react-icons/fa";
 import { usePathname } from 'next/navigation';
 import { NAV_ITEMS } from '@/utils/contents';
 import { 
@@ -31,11 +31,11 @@ const NavBar = ({ navClass = '', listClass, initial = false, animate = false }: 
                 initial={ initial }
                 animate={ animate }
             >
-                {NAV_ITEMS.map(nav => (
+                {NAV_ITEMS.filter(nav => nav.title !== "Home").map(nav => (
                     <motion.li 
                         key={ nav.title } 
                         variants={ linkVariants }
-                        className={`${ currentPath === nav.link ? 'border-l-2 md:border-l-0 md:border-b-2 border-accent' : '' } px-2 md:px-1 md:pb-1`}
+                        className={`${ currentPath === nav.link ? 'text-accent' : '' } px-2 md:px-1 md:pb-1`}
                         whileHover={ currentPath !== nav.link ? { y: -5 } : {}}
                     >
                         <Link href={ nav.link }>{ nav.title }</Link>
@@ -46,61 +46,42 @@ const NavBar = ({ navClass = '', listClass, initial = false, animate = false }: 
     )
 }
 
-const TimeDisplay = () => {
-    const [time, setTime] = useState("");
-    const MINUTE = 1000 * 60;
-
-    useEffect(() => {
-        const formatter = new Intl.DateTimeFormat("en-US", {
-            timeZone: "Asia/Manila",
-            hour: "2-digit",
-            minute: "2-digit",
-            hour12: true
-        });
-
-        const update = () => setTime(formatter.format(new Date()));
-        update();
-
-        const interval = setInterval(update, MINUTE);
-
-        return () => clearInterval(interval);
-    }, [])
-
-    return (
-        <div className="flex gap-1 md:gap-2 items-center justify-center text-[8px] md:text-base lg:text-lg">
-            <FaUserClock />
-            <p>{ time } (PHT)</p>
-        </div>
-    )
-}
-
 export const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const currentPath = usePathname();
+
     return (
         <header 
-            className="flex flex-col md:flex-row w-full bg-background text-default font-sora"
+            className="flex flex-col md:flex-row w-full text-default font-sora py-3"
         >
             <motion.div 
-                className="flex w-full lg:w-3/5 justify-between items-center mx-auto border-b border-default/20 px-6 py-4 lg:px-2" 
+                className="flex w-full lg:w-4/5 justify-between items-center mx-auto p-6 lg:py-4 lg:px-2" 
                 variants={ containerVariants }
                 initial="closed"
                 animate="open"
             >
-                <Link href="/" className='text-xs md:text-base lg:text-lg'>John Octavio.</Link>
+                {/* Home Navigation */}
+                <div className="flex gap-2 items-center">
+                    <div className="relative h-6 w-6">
+                        <Image src="/logo-32x32.png" alt="Icon of John Octavio's Website" fill className='object-cover'/>
+                    </div>
+                    <Link href="/" className={`text-xs md:text-base lg:text-lg ${currentPath === '/' ? 'text-accent' : ''}`}>
+                        John Octavio.
+                    </Link>
+                </div>
+                {/* PC Navbar */}
                 <NavBar 
                     navClass='hidden md:flex' 
-                    listClass='flex gap-8' 
+                    listClass='flex gap-6' 
                     initial="closed" 
                     animate="open"
                 />
-                <div className='flex items-center gap-2'>
-                    <TimeDisplay />
-                    <button className='block md:hidden' onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                        <RxHamburgerMenu />
-                    </button>
-                </div>
+                {/* Mobile Hamburger Menu */}
+                <button className='block md:hidden' onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                    <RxHamburgerMenu />
+                </button>
             </motion.div>
-            {/* Mobile Navbar */}
+            {/* Mobile NavBar */}
             <motion.div
                 initial={ false }
                 animate={ isMenuOpen ? "open" : "closed" }
@@ -108,8 +89,8 @@ export const Header = () => {
                 className='block md:hidden'    
             >
                 <NavBar 
-                    navClass='flex flex-col w-full px-4' 
-                    listClass='mt-4 flex flex-col gap-2 text-sm md:text-md'
+                    navClass='flex flex-col w-full py-3' 
+                    listClass='flex flex-col gap-4 text-sm md:text-md text-center'
                     initial="closed" 
                     animate={ isMenuOpen ? "open": "closed" }
                 />

@@ -9,10 +9,12 @@ export const metadata = {
 export default function Contact() {
     return (
       <>
-        <div className="w-3/5 md:w-4/5 flex flex-col gap-8 items-center justify-center font-manrope my-auto">
-          <ContactBanner />
-          <Invite />
+        <div className="w-3/5 md:w-4/5 flex justify-between items-center font-manrope my-auto">
           <ContactLinks />
+          <div className="flex flex-col items-end text-end gap-4">
+            <ContactBanner />
+            <Invite />
+          </div>
         </div>
       </>
     )

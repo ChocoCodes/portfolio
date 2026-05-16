@@ -58,7 +58,7 @@ export async function POST (req: NextRequest) {
         return result.toUIMessageStreamResponse();
     } catch (error: unknown) {
         console.error("Chat API Error:", error);
-        const errMessage = error instanceof Error ? "Failed to complete chat streaming." : "An unknown error occured.";
+        const errMessage = error instanceof Error ? `Failed to complete chat streaming: ${error.message}` : "An unknown error occured.";
         return NextResponse.json({ error: errMessage }, { status: 400 });
     }
 }

@@ -1,11 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #1A1A1D;
-  --text-primary: #E5E5E5;
-  --text-secondary: #ADA7A7;
-  --accent-color: #06898F;
-  --surface-color: #0B0B0E;
+  --background: #F8FAFC;
+  --text-primary: #1E293B;
+  --text-secondary: #4B5563;
+  --accent-color: #2563EB;
+  --accent-dark-color: #2259ce;
+  --surface-color: #334155;
+  --dot: #E0E6EC;
   --green: #00A97A;
 }
 
@@ -16,8 +18,20 @@
   --color-default: var(--text-primary);
   --color-secondary: var(--text-secondary);
   --color-accent: var(--accent-color);  
+  --color-accent-dark: var(--accent-dark-color);
   --color-surface: var(--surface-color);
   --color-green: var(--green);
+  --color-dots: var(--dot);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #334155 transparent;
+}
+
+.infinite-dots {
+  background-image: radial-gradient(var(--color-dots) 1.55px, transparent 1.55px);
+  background-size: 20px 20px;
 }
 
 .scrollbar-none::-webkit-scrollbar {

@@ -5,7 +5,8 @@ import { BiLogoFirebase } from "react-icons/bi";
 import { 
     Project, 
     Feature, 
-    TechStack 
+    TechStack, 
+    Certificate
 } from './types';
 import { 
     SiDiscord,
@@ -27,6 +28,7 @@ export const NAV_ITEMS = [
     { title: 'Home', link: '/' },
     { title: 'About', link: '/about' },
     { title: 'Projects', link: '/projects' },
+    { title: 'Certificates', link: '/certificates'},
     { title: 'Contact', link: '/contact' }
 ];
 
@@ -50,7 +52,7 @@ export const TECH_STACK: TechStack[] = [
 export const SOCIALS = [
     { name: 'Email', link: 'mailto:johnrlnd1704@gmail.com?subject=Inquiry%20From%20Porfolio', icon: IoMail, contact: 'johnrlnd1704@gmail.com' },
     { name: 'Github', link: 'https://github.com/ChocoCodes', icon: IoLogoGithub, contact: 'ChocoCodes' },
-    { name: 'LinkedIn', link: 'https://www.linkedin.com/in/johnrlnd', icon: FaLinkedinIn },
+    { name: 'LinkedIn', link: 'https://www.linkedin.com/in/johnrlnd', icon: FaLinkedinIn, contact: 'John Roland Octavio' },
     { name: 'Discord', link: 'https://discord.com/users/335627275821252608', icon: SiDiscord, contact: 'ambasingh404' }
 ];
 
@@ -93,17 +95,18 @@ export const PROJECTS: Project[] = [
         competition: 'Google APAC Solution Challenge 2025',
         imgPath: '/img/projects/bantala.png',
         tags: TECH_STACK.filter(t => (
-                ['Next.js', 'Firebase', 'TypeScript', 'Python'].includes(t.name)
+            ['Next.js', 'Firebase', 'TypeScript', 'Python'].includes(t.name)
         ))
     },
     { 
         name: 'RVS Dental', 
         description: 'Patient Records and Appointments Management System.',
         githubLink: 'https://github.com/ChocoCodes/rvs-dental', 
+        demoLink: 'https://drive.google.com/file/d/1Lb4phBVMrkMTJINqEg1nGVSGsVpiLCPc/view?usp=sharing',
         competition: 'Google APAC Solution Challenge 2025',
         imgPath: '/img/projects/rvs-dental.png',
         tags: TECH_STACK.filter(t => (
-                ['Laravel', 'TailwindCSS', 'MySQL'].includes(t.name)
+            ['Laravel', 'TailwindCSS', 'MySQL'].includes(t.name)
         ))
     },
     { 
@@ -172,19 +175,49 @@ export const FEATURES: Feature[] = [
     }
 ]
 
-export const CERTS = [
-    { title: 'Harvard CS50x: Intro to CS', path: '/img/certificates/cs50x-2025.png' },
-    { title: 'APAC Solution Challenge 2025', path: '/img/certificates/solcha.png' },
-    { title: 'Python Data Associate', path: '/img/certificates/python-data-associate.png' },
-    { title: 'SQL Associate', path: '/img/certificates/sql-associate.png' },
-    { title: 'Scrimba: Advanced JavaScript', path: '/img/certificates/advanced-js.png' },
-    { title: 'Scrimba: Tailwind CSS', path: '/img/certificates/tailwind.png' },
-    { title: 'Scrimba: TypeScript', path: '/img/certificates/typescript.png' },
+export const CERTS: Certificate[] = [
+    { 
+        title: 'Harvard CS50x: Introduction to CS', 
+        path: '/img/certificates/cs50x-2025.png', 
+        id: 'b2d6aa5d-aed9-4535-8b9a-ef829c201d66',
+        obtainedOn: 'November 26, 2025'
+    },
+    { 
+        title: 'APAC Solution Challenge 2025', 
+        path: '/img/certificates/solcha.png', 
+        id: '2025H2S03ASC-P00083',
+        obtainedOn: 'July 10, 2025'
+    },
+    { 
+        title: 'Python Data Associate', 
+        path: '/img/certificates/python-data-associate.png',
+        obtainedOn: 'September 20, 2024' 
+    },
+    { 
+        title: 'SQL Associate', 
+        path: '/img/certificates/sql-associate.png',
+        obtainedOn: 'December 27, 2024' 
+    },
+    { 
+        title: 'Scrimba: Advanced JavaScript', 
+        path: '/img/certificates/advanced-js.png',
+        obtainedOn: 'January 27, 2025'        
+    },
+    { 
+        title: 'Scrimba: Tailwind CSS', 
+        path: '/img/certificates/tailwind.png',
+        obtainedOn: 'January 18, 2025'  
+    },
+    { 
+        title: 'Scrimba: TypeScript', 
+        path: '/img/certificates/typescript.png',
+        obtainedOn: 'January 3, 2025'  
+    },
 ]
 
 export const PROFESSIONAL_DETAILS = [
     { domain: 'experience', title: 'Chief Technology Officer', name: 'Byte Me! (eSkolar)', duration: 'Oct 2025 - Nov 2025' },
-    { domain: 'experience', title: 'Chief Technology Officer', name: 'Google Developer Groups on Campus - USLS', duration: 'Oct 2024 - Present' },
+    { domain: 'experience', title: 'Chief Technology Officer', name: 'Google Developer Groups on Campus - USLS', duration: 'Oct 2024 - May 2026' },
     { domain: 'experience', title: 'Web Development Lead', name: 'Google Developer Groups on Campus - USLS', duration: 'Aug 2024 - Oct 2024' },
     { domain: 'education', title: 'University of St. La Salle - Bacolod', name: 'Bachelor of Science in Computer Science Major in Game Development', duration: 'Aug 2023 - Jun 2027' },
     { domain: 'education', title: 'University of Negros Occidental-Recoletos', name: 'STEM - Engineering and Information Technology', duration: 'June 2021 - May 2023' },

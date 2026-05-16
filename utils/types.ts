@@ -30,6 +30,8 @@ export type TechStack = {
 export type Certificate = {
     title: string;
     path: string;
+    id?: string;
+    obtainedOn?: string;
 }
 
 export interface Message {

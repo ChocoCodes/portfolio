@@ -1,10 +1,8 @@
 import { Header, Footer } from '@/components/_components';
-import { ChatBubble } from '@/components/chat/chat-bubble';
-import { isInDateRange } from '@/utils/utils';
 import localFont from 'next/font/local';
 import "./globals.css";
-import { SnowfallWrapper } from '@/components/_components';
 import { Analytics } from '@vercel/analytics/next';
+import { QuickLinks } from '@/components/_components';
 
 const sora = localFont({
   src: '../public/fonts/Sora-VariableFont_wght.ttf',
@@ -28,13 +26,11 @@ export const metadata = {
   },
   description: "Portfolio website of John Roland Octavio.",
   icons: [
-    { url: '/logo.ico' },
+    { url: '/favicon.ico' },
     { url: '/logo-32x32.png', sizes: '32x32', type: 'image/png' },
     { url: '/logo-16x16.png', sizes: '16x16', type: 'image/png' },
   ]
 };
-
-const showSnow = isInDateRange("2025-12-01T00:00:00Z", "2026-01-15T23:59:59Z");
 
 export default function RootLayout({
   children,
@@ -46,13 +42,12 @@ export default function RootLayout({
       <body
         className={`${ sora.variable } ${ manrope.variable } antialiased`}
       >
-      <main className="relative bg-background flex flex-col w-full gap-6 min-h-screen items-center">
-          { showSnow && <SnowfallWrapper /> } 
+      <main className="relative bg-background flex flex-col w-full gap-6 min-h-screen infinite-dots items-center">
           <Header />
           { children }
+          <QuickLinks /> 
           <Footer />
       </main>
-      <ChatBubble />
       <Analytics />
       </body>
     </html>
