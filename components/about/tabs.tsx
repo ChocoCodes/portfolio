@@ -19,7 +19,7 @@ interface TabContentProps {
 export const TabHeader = ({ currentTab, setCurrentTab }: TabHeaderProps) => {
     const TAB_ITEMS: TabKey[] = ['experience', 'education'];
     return (
-        <div className="w-full p-1 md:p-2 rounded-md flex gap-2 font-sora bg-surface">
+        <div className="w-full p-1 md:p-2 rounded-md flex gap-2 font-sora border border-default">
             {TAB_ITEMS.map((tab, i) => {
                 const isSelected = currentTab === tab;
                 const label = tab.charAt(0).toUpperCase() + tab.slice(1);
@@ -28,19 +28,19 @@ export const TabHeader = ({ currentTab, setCurrentTab }: TabHeaderProps) => {
                     <button 
                         key={ i } 
                         onClick={ () => setCurrentTab(tab) }
-                        className={`${ isSelected ? 'bg-accent text-surface' : 'text-accent'} relative text-[10px] md:text-lg w-1/2 p-1 rounded-sm hover:cursor-pointer`}
+                        className={`${ isSelected ? 'bg-default text-background' : 'text-' } relative text-[10px] md:text-lg w-1/2 p-1 rounded-sm hover:cursor-pointer`}
                         style={{ background: "none", border: "none" }}
-                        tabIndex={0}
+                        tabIndex={ 0 }
                     >
                         {isSelected && (
                             <motion.div
                                 layoutId="tab-bg"
-                                className="absolute inset-0 bg-accent rounded-sm z-0"
+                                className="absolute inset-0 bg-default rounded-sm z-0"
                                 transition={{ type: "spring", bounce: 0.3, duration: 0.5 }}
                             />
                         )}
-                        <span className={`relative z-10 ${isSelected ? "text-surface" : "text-accent"}`}>
-                            {label}
+                        <span className={`relative z-10 ${isSelected ? "text-background" : "text-default"}`}>
+                            { label }
                         </span>
                     </button>
                 )
@@ -72,6 +72,8 @@ export const Tabs = () => {
 
     return (
         <StaggerWrapper delay={ 0.3 } className='flex flex-col gap-5'>
+            <p className="font-sora font-semibold text-lg md:text-4xl text-center">Background</p>
+            <p className='-mt-5 text-xl text-secondary font-manrope text-center'>A look at where I've worked, learned, and grown.</p>
             <TabHeader currentTab={ currentTab } setCurrentTab={ setCurrentTab } />
             <TabContent currentTab={ currentTab }/>
         </StaggerWrapper>

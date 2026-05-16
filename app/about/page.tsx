@@ -1,5 +1,6 @@
 import { Introduction } from '@/components/about/_components';
-import { TechStackSection } from '@/components/about/tech-stack';
+import { TechStackSection } from '@/components/about/_components';
+import { Tabs } from '@/components/about/_components';
 
 export const metadata = {
     title: "About",
@@ -13,6 +14,7 @@ export default function About() {
       <section className="flex flex-col gap-8 md:gap-14 w-4/5 font-manrope">
         <Introduction />
         <TechStackSection />
+        <Tabs />
       </section>
     </>
   )

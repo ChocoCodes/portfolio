@@ -217,7 +217,7 @@ export const CERTS: Certificate[] = [
 
 export const PROFESSIONAL_DETAILS = [
     { domain: 'experience', title: 'Chief Technology Officer', name: 'Byte Me! (eSkolar)', duration: 'Oct 2025 - Nov 2025' },
-    { domain: 'experience', title: 'Chief Technology Officer', name: 'Google Developer Groups on Campus - USLS', duration: 'Oct 2024 - Present' },
+    { domain: 'experience', title: 'Chief Technology Officer', name: 'Google Developer Groups on Campus - USLS', duration: 'Oct 2024 - May 2026' },
     { domain: 'experience', title: 'Web Development Lead', name: 'Google Developer Groups on Campus - USLS', duration: 'Aug 2024 - Oct 2024' },
     { domain: 'education', title: 'University of St. La Salle - Bacolod', name: 'Bachelor of Science in Computer Science Major in Game Development', duration: 'Aug 2023 - Jun 2027' },
     { domain: 'education', title: 'University of Negros Occidental-Recoletos', name: 'STEM - Engineering and Information Technology', duration: 'June 2021 - May 2023' },

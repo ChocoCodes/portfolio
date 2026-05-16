@@ -24,6 +24,11 @@
   --color-dots: var(--dot);
 }
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #334155 transparent;
+}
+
 .infinite-dots {
   background-image: radial-gradient(var(--color-dots) 1.55px, transparent 1.55px);
   background-size: 20px 20px;
