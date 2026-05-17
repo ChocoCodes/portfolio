@@ -8,7 +8,15 @@ export const QuickLinks = () => {
     const displayed = SOCIALS.filter(s => ['Github', 'LinkedIn'].includes(s.name));
 
     return (
-        <StaggerWrapper delay={0.5} className="fixed bottom-20 left-1/2 -translate-x-1/2 lg:right-10 lg:translate-x-0 lg:top-1/2 lg:-translate-y-1/2 flex lg:flex-col gap-4 items-center justify-center border border-accent p-3 rounded-full text-accent">
+        <StaggerWrapper 
+            delay={0.5} 
+            className="w-fit h-fit fixed 
+            bottom-20 right-10 left-1/2 -translate-x-1/2 
+            lg:bottom-auto lg:left-auto lg:translate-x-0 
+            lg:right-10 lg:top-1/2 lg:-translate-y-1/2 
+            flex lg:flex-col gap-4 items-center justify-center 
+            border border-accent p-3 rounded-full text-accent"
+        >
             { displayed.map((social, i) => (
                 <SocialIcon 
                     borderedIcons={ false }    
